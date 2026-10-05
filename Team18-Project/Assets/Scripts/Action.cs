@@ -18,9 +18,11 @@ public class Action : MonoBehaviour
 
     void Start()
     {
+        // Connect to Game Manager and Text of the Action Button
         gm = GameObject.FindGameObjectWithTag("Player").GetComponent<GameManager>();
         buttonText = GetComponentInChildren<TextMeshProUGUI>();
-        baseFailChance = failChance;
+        // Reset Fail Chance
+        failChance = baseFailChance;
     }
     void Update()
     {

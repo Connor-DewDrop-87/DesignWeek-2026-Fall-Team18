@@ -505,12 +505,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49f75fc4ec801e842a429249c3502cc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 10
+  HPplayer: 10
   maxHP: 0
   HPCyclops: 50
   maxHPCyclops: 0
-  CyclopsActions:
-  - {fileID: 0}
   state: 0
   startText: 'You have finally caught up to the cyclops that has been spreading ruin
     through the lands, prepare your soul and steady your hands, this day you clash
@@ -1194,8 +1192,9 @@ MonoBehaviour:
   baseFailChance: 1
   failChance: 0
   power: 0
-  failText: 
-  successText: 
+  failText: 'Your blade glances off the cyclops thick skin. '
+  successText: 'Your aim is true this day, don''t get cocky the victor is yet to
+    be decided. '
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
