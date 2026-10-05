@@ -26,7 +26,7 @@ public class Action : MonoBehaviour
     }
     void Update()
     {
-        buttonText.text = name;
+        buttonText.text = $"{name}\nCyclops Eyes: {(failChance)}";
     }
     // Is used with a Button
     public void DoActionPlayer()

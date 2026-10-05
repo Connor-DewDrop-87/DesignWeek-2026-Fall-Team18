@@ -58,11 +58,11 @@ public class GameManager : MonoBehaviour
         switch (state)
         {
             case GameManager.State.START: // Only Play at the Start
-                messageDisplayer.text = startText;
+                messageDisplayer.text = startText + "\n(Click Here)";
                 break;
             case GameManager.State.READY:
                 // Go Back Here when the Player is able to Act
-                messageDisplayer.text = "What do you do?\n(Click Here)";
+                messageDisplayer.text = "What do you do?\n(Click Actions Below)";
                 break;
             case GameManager.State.ROLLINGACTION:
                 messageDisplayer.text = $"Rolling...";
