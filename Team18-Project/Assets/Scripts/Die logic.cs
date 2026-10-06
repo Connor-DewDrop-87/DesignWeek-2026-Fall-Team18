@@ -33,7 +33,7 @@ public class Dielogic : MonoBehaviour
                 //only change the die face if a certain number of frames have passed
                 if (nextFace >= rollSpeed)
                 {
-                    dieFace = Random.Range(2, 6); //do not show the eye
+                    dieFace = Random.Range(2, 7); //do not show the eye
                     ////SOUND EFFECT
                     rollSpeed += rollIncrement; //increase the number of frames between changes
                     nextFace = 0;
@@ -66,7 +66,7 @@ public class Dielogic : MonoBehaviour
             return dieLanded;
         } else //pick a normal die face at random
         {
-            dieLanded = Random.Range(2, 6);
+            dieLanded = Random.Range(2, 7);
             return dieLanded;
         }
     }

@@ -66,16 +66,10 @@ public class GameManager : MonoBehaviour
                 break;
             case GameManager.State.ROLLINGACTION:
                 messageDisplayer.text = $"Rolling...";
+                // Only do the action after the Dice has Stopped Rolling
                 if (CurrentAction.die.rolling==false)
                 {
-                    if (CurrentAction.die.dieLanded==1)
-                    {
-                        state = State.FAILEDACTION;
-                    }
-                    else
-                    {
-                        state = State.SUCCESSFULACTION;
-                    }
+                    CurrentAction.DoActionPlayer();
                 }
                 break;
             case GameManager.State.SUCCESSFULACTION:

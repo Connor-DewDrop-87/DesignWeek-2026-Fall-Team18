@@ -11,8 +11,6 @@ public class Action : MonoBehaviour
     public Dielogic die;
     // Action Stuff
     public string attackName; // Name of Attack
-    public int baseFailChance; // Base Chance to Fail
-    public int failChance; // Chance to Fail
     public int power; // Amount of Damage/Healing it does
     public string failText; // Text when the player fails
     public string successText; // Text when the player succeeds
@@ -23,16 +21,14 @@ public class Action : MonoBehaviour
         // Connect to Game Manager and Text of the Action Button
         gm = GameObject.FindGameObjectWithTag("Player").GetComponent<GameManager>();
         buttonText = GetComponentInChildren<TextMeshProUGUI>();
-        die = GameObject.Find("Dice").GetComponent<Dielogic>();
-        // Reset Fail Chance
-        failChance = baseFailChance;
+        die = GetComponent<Dielogic>();
     }
     void Update()
     {
-        buttonText.text = $"{attackName}\nCyclops Eyes: {die.eyeChance}";
+        buttonText.text = $"{attackName}\nEye Chance: {die.eyeChance*100}%";
     }
     // Is used with a Button
-    public void DoActionPlayer()
+    public void SelectActionPlayer()
     {
         // If the player isn't ready, in between their action or the Ogre's Action
         if (gm.state!=GameManager.State.READY)
@@ -41,12 +37,27 @@ public class Action : MonoBehaviour
         }
         // Game Manager get the action
         gm.CurrentAction = this;
-        // Otherwise, do the action
+        int result = die.RollDie();
+        gm.state = GameManager.State.ROLLINGACTION;
+        Debug.Log("Did Action. YIPEE!!");
+    }
+
+    public void DoActionPlayer()
+    {
         if (attackName=="Attack")
         {
-            int result = die.RollDie();
-            gm.state = GameManager.State.ROLLINGACTION;
+            if (die.dieLanded == 1)
+            {
+                gm.state = GameManager.State.FAILEDACTION;
+                // Reset Eye Chance
+                die.eyeChance = die.baseEyeChance;
+            }
+            else
+            {
+                gm.state = GameManager.State.SUCCESSFULACTION;
+                // Increase Eye Chance
+                die.eyeChance += die.baseEyeChance;
+            }
         }
-        Debug.Log("Did Action. YIPEE!!");
     }
 }
