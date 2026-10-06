@@ -12,8 +12,8 @@ public class Action : MonoBehaviour
     // Action Stuff
     public string attackName; // Name of Attack
     public int power; // Amount of Damage/Healing it does
-    public string failText; // Text when the player fails
-    public string successText; // Text when the player succeeds
+    public string[] failText; // Text when the player fails
+    public string[] successText; // Text when the player succeeds
     public int rollsSinceEye = 0;
 
 
@@ -58,6 +58,7 @@ public class Action : MonoBehaviour
     {
         if (die.dieLanded == 1)
         {
+            gm.randomText = Random.Range(0,failText.Length-1);
             gm.state = GameManager.State.FAILEDACTION;
             // Reset Eye Chance
             if (rollsSinceEye > 2)
@@ -81,6 +82,7 @@ public class Action : MonoBehaviour
         }
         else
         {
+            gm.randomText = Random.Range(0, successText.Length - 1);
             gm.state = GameManager.State.SUCCESSFULACTION;
             // Increase Eye Chance
             die.eyeChance += die.baseEyeChance;

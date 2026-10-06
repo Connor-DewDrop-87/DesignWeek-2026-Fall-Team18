@@ -34,6 +34,7 @@ public class GameManager : MonoBehaviour
     public Action CurrentAction;
     public float time = 0;
     public float maxAnimTime = 1;
+    public int randomText;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -67,10 +68,10 @@ public class GameManager : MonoBehaviour
                 }
                 break;
             case GameManager.State.SUCCESSFULACTION:
-                messageDisplayer.text = $"{CurrentAction.successText}\n(Click Here)";
+                messageDisplayer.text = $"{CurrentAction.successText[randomText]}\n(Click Here)";
                 break;
             case GameManager.State.FAILEDACTION:
-                messageDisplayer.text = $"{CurrentAction.failText}\nCyclop's Turn (Click Here)";
+                messageDisplayer.text = $"{CurrentAction.failText[randomText]}\nCyclop's Turn (Click Here)";
                 state = State.CYCLOPSTURN;
                 break;
             case GameManager.State.CYCLOPSTEXT:
