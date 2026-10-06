@@ -1,0 +1,611 @@
+fileFormatVersion: 2
+guid: acfd1d6a650f9b642a5c9ba2edb04f12
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5962634768888545048
+    second: Healthbar Spritesheet copy_0
+  - first:
+      213: -2083414317885490781
+    second: Healthbar Spritesheet copy_1
+  - first:
+      213: 6663996286601219923
+    second: Healthbar Spritesheet copy_2
+  - first:
+      213: 8845760921877112408
+    second: Healthbar Spritesheet copy_3
+  - first:
+      213: -846044944747790385
+    second: Healthbar Spritesheet copy_4
+  - first:
+      213: -1754099981240325157
+    second: Healthbar Spritesheet copy_5
+  - first:
+      213: 7905940684234458663
+    second: Healthbar Spritesheet copy_6
+  - first:
+      213: -3518061040336665372
+    second: Healthbar Spritesheet copy_7
+  - first:
+      213: 1765072357261259047
+    second: Healthbar Spritesheet copy_8
+  - first:
+      213: -4267757041132488533
+    second: Healthbar Spritesheet copy_9
+  - first:
+      213: -6412184872810601221
+    second: Healthbar Spritesheet copy_10
+  - first:
+      213: -7990117135186098829
+    second: Healthbar Spritesheet copy_11
+  - first:
+      213: -7469671084087019599
+    second: Healthbar Spritesheet copy_12
+  - first:
+      213: -5809115978048229511
+    second: Healthbar Spritesheet copy_13
+  - first:
+      213: 4275239027641033367
+    second: Healthbar Spritesheet copy_14
+  - first:
+      213: 5866449069182397180
+    second: Healthbar Spritesheet copy_15
+  - first:
+      213: 8492265137611705857
+    second: Healthbar Spritesheet copy_16
+  - first:
+      213: 4828490999120485722
+    second: Healthbar Spritesheet copy_17
+  - first:
+      213: -1014551854546205697
+    second: Healthbar Spritesheet copy_18
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Healthbar Spritesheet copy_0
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 1009
+        width: 23
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e04103e447704da0800000000000000
+      internalID: -5962634768888545048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Healthbar Spritesheet copy_1
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 1009
+        width: 26
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a9f87e57b93613e0800000000000000
+      internalID: -2083414317885490781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Healthbar Spritesheet copy_2
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 1009
+        width: 23
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35f4367b0554b7c50800000000000000
+      internalID: 6663996286601219923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Healthbar Spritesheet copy_3
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 1009
+        width: 40
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 856648c01b472ca70800000000000000
+      internalID: 8845760921877112408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Healthbar Spritesheet copy_4
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 998
+        width: 28
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fcffa44fa9e3244f0800000000000000
+      internalID: -846044944747790385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Healthbar Spritesheet copy_5
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 1009
+        width: 7
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bdba6a55c5f28a7e0800000000000000
+      internalID: -1754099981240325157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Healthbar Spritesheet copy_6
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 1009
+        width: 25
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7268a133a2b87bd60800000000000000
+      internalID: 7905940684234458663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Healthbar Spritesheet copy_7
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 1009
+        width: 19
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e487909f165d2fc0800000000000000
+      internalID: -3518061040336665372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Healthbar Spritesheet copy_8
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 1027
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7213b6905fbce7810800000000000000
+      internalID: 1765072357261259047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Healthbar Spritesheet copy_9
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 1009
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba830a72591e5c4c0800000000000000
+      internalID: -4267757041132488533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Healthbar Spritesheet copy_10
+      rect:
+        serializedVersion: 2
+        x: 613
+        y: 911
+        width: 730
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf4adf5d4d75307a0800000000000000
+      internalID: -6412184872810601221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Healthbar Spritesheet copy_11
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 893
+        width: 442
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 375887b8cc66d1190800000000000000
+      internalID: -7990117135186098829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Healthbar Spritesheet copy_12
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 670
+        width: 113
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b77cfb99b5665890800000000000000
+      internalID: -7469671084087019599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Healthbar Spritesheet copy_13
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 670
+        width: 113
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97fa365cbcfd16fa0800000000000000
+      internalID: -5809115978048229511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Healthbar Spritesheet copy_14
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 670
+        width: 113
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7922e649e33b45b30800000000000000
+      internalID: 4275239027641033367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Healthbar Spritesheet copy_15
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 591
+        width: 365
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cfaa98db850d96150800000000000000
+      internalID: 5866449069182397180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Healthbar Spritesheet copy_16
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 525
+        width: 358
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10e87c116269ad570800000000000000
+      internalID: 8492265137611705857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Healthbar Spritesheet copy_17
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 284
+        width: 730
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5d5fb33bfe320340800000000000000
+      internalID: 4828490999120485722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Healthbar Spritesheet copy_18
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 202
+        width: 650
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff34f8fa6769be1f0800000000000000
+      internalID: -1014551854546205697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Healthbar Spritesheet copy_0: -5962634768888545048
+      Healthbar Spritesheet copy_1: -2083414317885490781
+      Healthbar Spritesheet copy_10: -6412184872810601221
+      Healthbar Spritesheet copy_11: -7990117135186098829
+      Healthbar Spritesheet copy_12: -7469671084087019599
+      Healthbar Spritesheet copy_13: -5809115978048229511
+      Healthbar Spritesheet copy_14: 4275239027641033367
+      Healthbar Spritesheet copy_15: 5866449069182397180
+      Healthbar Spritesheet copy_16: 8492265137611705857
+      Healthbar Spritesheet copy_17: 4828490999120485722
+      Healthbar Spritesheet copy_18: -1014551854546205697
+      Healthbar Spritesheet copy_2: 6663996286601219923
+      Healthbar Spritesheet copy_3: 8845760921877112408
+      Healthbar Spritesheet copy_4: -846044944747790385
+      Healthbar Spritesheet copy_5: -1754099981240325157
+      Healthbar Spritesheet copy_6: 7905940684234458663
+      Healthbar Spritesheet copy_7: -3518061040336665372
+      Healthbar Spritesheet copy_8: 1765072357261259047
+      Healthbar Spritesheet copy_9: -4267757041132488533
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
