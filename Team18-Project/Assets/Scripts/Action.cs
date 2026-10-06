@@ -22,11 +22,10 @@ public class Action : MonoBehaviour
         // Connect to Game Manager and Text of the Action Button
         gm = GameObject.FindGameObjectWithTag("Player").GetComponent<GameManager>();
         buttonText = GetComponentInChildren<TextMeshProUGUI>();
-        die = GetComponent<Dielogic>();
     }
     void Update()
     {
-        buttonText.text = $"{attackName}\nEye Chance: {die.eyeChance*100}%";
+        buttonText.text = $"{attackName}";
     }
     // Is used with a Button
     public void SelectActionPlayer()
