@@ -8,7 +8,7 @@ public class Action : MonoBehaviour
     // Text
     TextMeshProUGUI buttonText;
     // Die
-    Dielogic die;
+    public Dielogic die;
     // Action Stuff
     public string attackName; // Name of Attack
     public int baseFailChance; // Base Chance to Fail
@@ -23,12 +23,13 @@ public class Action : MonoBehaviour
         // Connect to Game Manager and Text of the Action Button
         gm = GameObject.FindGameObjectWithTag("Player").GetComponent<GameManager>();
         buttonText = GetComponentInChildren<TextMeshProUGUI>();
+        die = GameObject.Find("Dice").GetComponent<Dielogic>();
         // Reset Fail Chance
         failChance = baseFailChance;
     }
     void Update()
     {
-        buttonText.text = $"{attackName}\nCyclops Eyes: {(failChance)}";
+        buttonText.text = $"{attackName}\nCyclops Eyes: {die.eyeChance}";
     }
     // Is used with a Button
     public void DoActionPlayer()
@@ -44,6 +45,7 @@ public class Action : MonoBehaviour
         if (attackName=="Attack")
         {
             int result = die.RollDie();
+            gm.state = GameManager.State.ROLLINGACTION;
         }
         Debug.Log("Did Action. YIPEE!!");
     }

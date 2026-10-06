@@ -66,7 +66,17 @@ public class GameManager : MonoBehaviour
                 break;
             case GameManager.State.ROLLINGACTION:
                 messageDisplayer.text = $"Rolling...";
-                // Dice Rolling Here
+                if (CurrentAction.die.rolling==false)
+                {
+                    if (CurrentAction.die.dieLanded==1)
+                    {
+                        state = State.FAILEDACTION;
+                    }
+                    else
+                    {
+                        state = State.SUCCESSFULACTION;
+                    }
+                }
                 break;
             case GameManager.State.SUCCESSFULACTION:
                 messageDisplayer.text = $"{CurrentAction.successText}\n(Click Here)";
