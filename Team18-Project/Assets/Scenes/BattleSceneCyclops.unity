@@ -363,10 +363,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 648447006}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.089, y: 0.187}
-  m_AnchorMax: {x: 0.177, y: 0.8067172}
-  m_AnchoredPosition: {x: -3.0164795, y: 0.6121826}
-  m_SizeDelta: {x: 12.032806, y: -2.7756042}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0.18910973, y: 1}
+  m_AnchoredPosition: {x: -6.0164795, y: 6}
+  m_SizeDelta: {x: 13, y: 7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &192694082
 MonoBehaviour:
@@ -1088,10 +1088,10 @@ RectTransform:
   - {fileID: 192694081}
   m_Father: {fileID: 478988960}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.684}
-  m_AnchorMax: {x: 0.4884376, y: 0.8308519}
-  m_AnchoredPosition: {x: -34.99997, y: 4.5}
-  m_SizeDelta: {x: 62.134216, y: 6.7512817}
+  m_AnchorMin: {x: 0.00625, y: 0.21700001}
+  m_AnchorMax: {x: 0.282, y: 0.314}
+  m_AnchoredPosition: {x: -1, y: 0.000030517578}
+  m_SizeDelta: {x: -0.42001343, y: 1.6096191}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &648447007
 MonoBehaviour:
@@ -1239,10 +1239,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2071449317}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.075219184, y: 0.20743397}
-  m_AnchorMax: {x: 0.94558907, y: 0.717}
-  m_AnchoredPosition: {x: -17, y: 4}
-  m_SizeDelta: {x: 16.84021, y: 3}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 4, y: -1}
+  m_SizeDelta: {x: -6, y: -9}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &896811999
 MonoBehaviour:
@@ -1293,6 +1293,7 @@ GameObject:
   - component: {fileID: 917156482}
   - component: {fileID: 917156481}
   - component: {fileID: 917156483}
+  - component: {fileID: 917156484}
   m_Layer: 0
   m_Name: Cyclops
   m_TagString: Untagged
@@ -1391,6 +1392,103 @@ MonoBehaviour:
   TimeBetweenSprites: 0.1
   currentSprite: 0
   swingingForward: 1
+--- !u!82 &917156484
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 917156480}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &922153531
 GameObject:
   m_ObjectHideFlags: 0
@@ -1423,10 +1521,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 478988960}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.018437501, y: 0.47966668}
-  m_AnchorMax: {x: 0.24000001, y: 0.6566296}
-  m_AnchoredPosition: {x: 0.5, y: 3.0905151}
-  m_SizeDelta: {x: 6.0216064, y: -5.640106}
+  m_AnchorMin: {x: 0.018437501, y: 0.58985186}
+  m_AnchorMax: {x: 0.24147919, y: 0.7585186}
+  m_AnchoredPosition: {x: -1, y: 3.5}
+  m_SizeDelta: {x: 3.0216064, y: 3.3598938}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &922153533
 MonoBehaviour:
@@ -1640,10 +1738,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 478988960}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -798.0648, y: -157.07}
-  m_SizeDelta: {x: 273.8305, y: 248.98}
+  m_AnchorMin: {x: 0.058000002, y: 0.34255558}
+  m_AnchorMax: {x: 0.19435418, y: 0.5556296}
+  m_AnchoredPosition: {x: -2.5, y: -3}
+  m_SizeDelta: {x: 12.830505, y: 18.979996}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1472149326
 MonoBehaviour:
@@ -1951,6 +2049,8 @@ MonoBehaviour:
   - The cyclops shrieks as you stab into its body.
   - Your blade grazes the foe's neck.
   rollsSinceEye: 0
+  previousFailMessage: 0
+  previousSuccessMessage: 0
 --- !u!1 &1816541534
 GameObject:
   m_ObjectHideFlags: 0
@@ -2061,10 +2161,10 @@ RectTransform:
   - {fileID: 896811998}
   m_Father: {fileID: 648447006}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.143, y: 0.187}
-  m_AnchorMax: {x: 0.86700004, y: 0.8067172}
-  m_AnchoredPosition: {x: -5, y: 0.5}
-  m_SizeDelta: {x: 6, y: 3}
+  m_AnchorMin: {x: 0.14189029, y: 0.24339531}
+  m_AnchorMax: {x: 0.82332915, y: 0.83080244}
+  m_AnchoredPosition: {x: 1.5, y: 1}
+  m_SizeDelta: {x: 4, y: 3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2071449318
 MonoBehaviour:
@@ -2086,7 +2186,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 4828490999120485722, guid: acfd1d6a650f9b642a5c9ba2edb04f12, type: 3}
+  m_Sprite: {fileID: 5866449069182397180, guid: acfd1d6a650f9b642a5c9ba2edb04f12, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
