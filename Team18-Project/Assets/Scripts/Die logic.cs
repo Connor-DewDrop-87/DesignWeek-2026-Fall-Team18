@@ -7,6 +7,11 @@ public class Dielogic : MonoBehaviour
     public Image dieFaceSprite;
     public Sprite[] dieFaces;
     public TextMeshProUGUI eyeChanceText;
+    public Vector3 basePosition;
+    public float shakeAmount = 20f;
+    public Vector3 baseScale;
+    public float scaleAmount = 0.10f;
+    public float scaleDecrease = 0.01f;
     public float baseEyeChance = 0.10f; // Base Chance to roll the eye (percent)
     public float eyeChance; // Chance to roll the eye
     public bool rolling = false; //Is the roll anamation currently playing
@@ -24,6 +29,8 @@ public class Dielogic : MonoBehaviour
         eyeChance = baseEyeChance;
         rollSpeed = maxRollSpeed;
         eyeChanceText = GameObject.Find("ChanceOfEye").GetComponent<TextMeshProUGUI>();
+        basePosition = transform.position;
+        baseScale = transform.localScale;
     }
 
     // Update is called once per frame
@@ -33,8 +40,6 @@ public class Dielogic : MonoBehaviour
         //play the roll animation
         if (rolling)
         {
-            // Display different die faces
-            dieFaceSprite.sprite = dieFaces[dieFace - 1];
             //for a number of secconds
             if (rollTimer <= rollTime)
             {
@@ -47,22 +52,48 @@ public class Dielogic : MonoBehaviour
                     ////SOUND EFFECT
                     rollSpeed += rollIncrement; //increase the number of frames between changes
                     nextFace = 0;
+                    if (transform.position == basePosition)
+                    {
+                        transform.position += new Vector3(Random.Range(-shakeAmount, shakeAmount + 1), Random.Range(-shakeAmount, shakeAmount + 1), 0);
+                    } else
+                    {
+                        transform.position = basePosition;
+                    }
                 }
                 rollTimer += Time.deltaTime;
 
-            } else //stop the anumation and reset everything
+            } else //stop the animation and reset everything
             {
                 rolling = false;
                 rollSpeed = maxRollSpeed;
                 nextFace = 0;
                 rollTimer = 0f;
                 dieFace = dieLanded;
-                dieFaceSprite.sprite = dieFaces[dieFace - 1];
-                ////start an animation of the die landing
+                transform.position = basePosition;
+                //start an animation of the die landing
+                if (dieLanded == 1)
+                {
+                    transform.localScale += new Vector3(scaleAmount * 2, scaleAmount * 2, 0);
+                } else
+                {
+                    transform.localScale += new Vector3(scaleAmount, scaleAmount, 0);
+                }
+            }
+        }
+
+        if (transform.localScale.x > baseScale.x)
+        {
+            if (dieLanded == 1)
+            {
+                transform.localScale -= new Vector3(scaleDecrease/5, scaleDecrease/5, 0);
+            } else
+            {
+                transform.localScale -= new Vector3(scaleDecrease, scaleDecrease, 0);
             }
         }
 
         //draw the appropriate die sprite
+        dieFaceSprite.sprite = dieFaces[dieFace - 1];
     }
     //returns the nomber the die rolls as an int; 1 is the eye
     public int RollDie()
