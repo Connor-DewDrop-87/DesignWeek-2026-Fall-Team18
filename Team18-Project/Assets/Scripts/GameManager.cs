@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
+    Action act;
     // Player HP
     public float HPplayer = 10;
     public float maxHP;
@@ -12,6 +13,10 @@ public class GameManager : MonoBehaviour
     public float HPCyclops = 50;
     public float maxHPCyclops;
     public GameObject HPFillCyclops;
+    public string cyclopsAttackType = "Normal";
+    public float cyclopsAttackDammage = 0f;
+    public float cyclopsNormalDammage = 3f;
+    public float cyclopsPowerDammage = 7f;
     // Heart Sprites
     public Image HPHeartPlayer;
     public Image HPHeartCyclops;
@@ -91,22 +96,22 @@ public class GameManager : MonoBehaviour
             case GameManager.State.WON:
                 if (goodEnding==true)
                 {
-                    messageDisplayer.text = "          [Folk Hero Ending]\n"+folkHeroEnding + "\n(Click Here)";
+                    messageDisplayer.text = "  \t\t[Folk Hero Ending]\n"+folkHeroEnding + "\n(Click Here)";
                 }
                 else
                 {
-                    messageDisplayer.text = "          [Brittle Hero Ending]\n" + fragileHeroEnding + "\n(Click Here)";
+                    messageDisplayer.text = "  \t\t[Brittle Hero Ending]\n" + fragileHeroEnding + "\n(Click Here)";
                 }
 
                 break;
             case GameManager.State.DEAD:
                 if (goodEnding == true)
                 {
-                    messageDisplayer.text = "          [Brave Hero Ending]\n" + braveHeroEnding + "\n(Click Here)";
+                    messageDisplayer.text = "  \t\t[Brave Hero Ending]\n" + braveHeroEnding + "\n(Click Here)";
                 }
                 else
                 {
-                    messageDisplayer.text = "          [Arrogant Hero Ending]\n" + arrogantHeroEnding + "\n(Click Here)";
+                    messageDisplayer.text = "  \t\t[Arrogant Hero Ending]\n" + arrogantHeroEnding + "\n(Click Here)";
                 }
                 break;
         }
@@ -121,7 +126,14 @@ public class GameManager : MonoBehaviour
                 state = State.READY;
                 break;
             case GameManager.State.SUCCESSFULACTION:
-                state = State.READY;
+                if (CurrentAction.actionName=="Block")
+                {
+                    state = State.CYCLOPSTURN;
+                }
+                else
+                {
+                    state = State.READY;
+                }   
                 break;
             case GameManager.State.FAILEDACTION:
                 state = State.CYCLOPSTURN;
@@ -129,7 +141,41 @@ public class GameManager : MonoBehaviour
             case GameManager.State.CYCLOPSTURN: // Deals damage on Click because, if it didn't
                                                // It would kill the player immediatly as it Update
                                                // Would Do it Every Frame
-                HPplayer -= 3;
+                if (cyclopsAttackType == "Normal")
+                {
+                    Debug.Log("Normal Attack");
+                    cyclopsAttackDammage = cyclopsNormalDammage * (1 - CurrentAction.currentBlockStrength);
+                } else if (cyclopsAttackType == "Power")
+                {
+                    Debug.Log("Power Attack");
+                    cyclopsAttackDammage = cyclopsPowerDammage * (1 - CurrentAction.currentBlockStrength);
+                } else if (cyclopsAttackType == "Eye Ray")
+                {
+                    Debug.Log("Laser");
+                    cyclopsAttackDammage = cyclopsNormalDammage;
+                }
+                // If the damage is below 0, reset to 0 
+                if (cyclopsAttackDammage<0)
+                {
+                    cyclopsAttackDammage = 0;
+                }
+                //do the dammage and reset the block
+                HPplayer -= cyclopsAttackDammage;
+                CurrentAction.currentBlockStrength = 0;
+
+                //Determine the what the next attack will be
+                //Done here so that the player can have warning and so the first attack is always normal
+                float t = Random.Range(0f, 1f);
+                if (t < 0.5f)
+                {
+                    cyclopsAttackType = "Normal";
+                } else if (t < 0.75f)
+                {
+                    cyclopsAttackType = "Power";
+                } else
+                {
+                    cyclopsAttackType = "Eye Ray";
+                }
                 state = State.CYCLOPSTEXT;
                 break;
             case State.CYCLOPSTEXT:
@@ -143,6 +189,11 @@ public class GameManager : MonoBehaviour
                 SceneManager.LoadScene("TitleScreen");
                 break;
         }
+    }
+
+    public void PrepareCyclopsTurn()
+    {
+
     }
 
     public void CheckHPUI()
