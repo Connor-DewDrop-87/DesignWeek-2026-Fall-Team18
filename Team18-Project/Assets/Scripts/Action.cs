@@ -14,6 +14,7 @@ public class Action : MonoBehaviour
     public int power; // Amount of Damage/Healing it does
     public string failText; // Text when the player fails
     public string successText; // Text when the player succeeds
+    public int rollsSinceEye = 0;
 
 
     void Start()
@@ -46,20 +47,46 @@ public class Action : MonoBehaviour
     {
         if (attackName=="Attack")
         {
-            if (die.dieLanded == 1)
+            if (!EyeLanded())
             {
-                gm.state = GameManager.State.FAILEDACTION;
-                // Reset Eye Chance
-                die.eyeChance = die.baseEyeChance;
-            }
-            else
-            {
-                gm.state = GameManager.State.SUCCESSFULACTION;
-                // Increase Eye Chance
-                die.eyeChance += die.baseEyeChance;
                 // Do Damage
                 gm.HPCyclops -= die.dieLanded;
             }
+        }
+    }
+
+    public bool EyeLanded()
+    {
+        if (die.dieLanded == 1)
+        {
+            gm.state = GameManager.State.FAILEDACTION;
+            // Reset Eye Chance
+            if (rollsSinceEye > 2)
+            {
+                die.eyeChance = die.baseEyeChance;
+            }
+            else if (rollsSinceEye == 2)
+            {
+                die.eyeChance = die.baseEyeChance * 0.75f;
+            }
+            else if (rollsSinceEye == 1)
+            {
+                die.eyeChance = die.baseEyeChance * 0.5f;
+            }
+            else
+            {
+                die.eyeChance = die.baseEyeChance * 0.1f;
+            }
+            rollsSinceEye = 0;
+            return true;
+        }
+        else
+        {
+            gm.state = GameManager.State.SUCCESSFULACTION;
+            // Increase Eye Chance
+            die.eyeChance += die.baseEyeChance;
+            rollsSinceEye++;
+            return false;
         }
     }
 }
