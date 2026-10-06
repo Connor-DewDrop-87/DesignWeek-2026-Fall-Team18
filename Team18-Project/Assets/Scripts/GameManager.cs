@@ -143,13 +143,21 @@ public class GameManager : MonoBehaviour
                                                // Would Do it Every Frame
                 if (cyclopsAttackType == "Normal")
                 {
+                    Debug.Log("Normal Attack");
                     cyclopsAttackDammage = cyclopsNormalDammage * (1 - CurrentAction.currentBlockStrength);
                 } else if (cyclopsAttackType == "Power")
                 {
+                    Debug.Log("Power Attack");
                     cyclopsAttackDammage = cyclopsPowerDammage * (1 - CurrentAction.currentBlockStrength);
                 } else if (cyclopsAttackType == "Eye Ray")
                 {
+                    Debug.Log("Laser");
                     cyclopsAttackDammage = cyclopsNormalDammage;
+                }
+                // If the damage is below 0, reset to 0 
+                if (cyclopsAttackDammage<0)
+                {
+                    cyclopsAttackDammage = 0;
                 }
                 //do the dammage and reset the block
                 HPplayer -= cyclopsAttackDammage;
@@ -181,6 +189,11 @@ public class GameManager : MonoBehaviour
                 SceneManager.LoadScene("TitleScreen");
                 break;
         }
+    }
+
+    public void PrepareCyclopsTurn()
+    {
+
     }
 
     public void CheckHPUI()
