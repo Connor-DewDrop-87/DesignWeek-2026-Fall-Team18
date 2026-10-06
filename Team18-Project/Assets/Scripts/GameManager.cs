@@ -1,7 +1,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     // Player HP
@@ -91,22 +91,22 @@ public class GameManager : MonoBehaviour
             case GameManager.State.WON:
                 if (goodEnding==true)
                 {
-                    messageDisplayer.text = "          [Folk Hero Ending]\n"+folkHeroEnding;
+                    messageDisplayer.text = "          [Folk Hero Ending]\n"+folkHeroEnding + "\n(Click Here)";
                 }
                 else
                 {
-                    messageDisplayer.text = "          [Brittle Hero Ending]\n" + fragileHeroEnding;
+                    messageDisplayer.text = "          [Brittle Hero Ending]\n" + fragileHeroEnding + "\n(Click Here)";
                 }
 
                 break;
             case GameManager.State.DEAD:
                 if (goodEnding == true)
                 {
-                    messageDisplayer.text = "          [Brave Hero Ending]\n" + braveHeroEnding;
+                    messageDisplayer.text = "          [Brave Hero Ending]\n" + braveHeroEnding + "\n(Click Here)";
                 }
                 else
                 {
-                    messageDisplayer.text = "          [Arrogant Hero Ending]\n" + arrogantHeroEnding;
+                    messageDisplayer.text = "          [Arrogant Hero Ending]\n" + arrogantHeroEnding + "\n(Click Here)";
                 }
                 break;
         }
@@ -137,10 +137,10 @@ public class GameManager : MonoBehaviour
                 state = State.READY;
                 break;
             case GameManager.State.WON:
-                // Go to Win Screen (Do Later)
+                SceneManager.LoadScene("TitleScreen");
                 break;
             case GameManager.State.DEAD:
-                // Go to Death Screen (Do Later)
+                SceneManager.LoadScene("TitleScreen");
                 break;
         }
     }
