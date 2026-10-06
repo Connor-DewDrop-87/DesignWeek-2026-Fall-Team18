@@ -80,22 +80,22 @@ public class GameManager : MonoBehaviour
             case GameManager.State.WON:
                 if (goodEnding==true)
                 {
-                    messageDisplayer.text = folkHeroEnding;
+                    messageDisplayer.text = "          [Folk Hero Ending]\n"+folkHeroEnding;
                 }
                 else
                 {
-                    messageDisplayer.text = fragileHeroEnding;
+                    messageDisplayer.text = "          [Brittle Hero Ending]\n" + fragileHeroEnding;
                 }
 
                 break;
             case GameManager.State.DEAD:
                 if (goodEnding == true)
                 {
-                    messageDisplayer.text = braveHeroEnding;
+                    messageDisplayer.text = "          [Brave Hero Ending]\n" + braveHeroEnding;
                 }
                 else
                 {
-                    messageDisplayer.text = arrogantHeroEnding;
+                    messageDisplayer.text = "          [Arrogant Hero Ending]\n" + arrogantHeroEnding;
                 }
                 break;
         }

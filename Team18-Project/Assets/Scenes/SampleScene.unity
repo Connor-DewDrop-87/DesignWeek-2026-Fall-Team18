@@ -290,10 +290,10 @@ RectTransform:
   - {fileID: 9162833}
   m_Father: {fileID: 478988960}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.7056875, y: 0.044629633}
-  m_AnchorMax: {x: 0.98075014, y: 0.96862966}
-  m_AnchoredPosition: {x: 1, y: 3.894928}
-  m_SizeDelta: {x: -1.840332, y: 8.130188}
+  m_AnchorMin: {x: 0.5785835, y: 0.22800002}
+  m_AnchorMax: {x: 0.98079175, y: 0.96862966}
+  m_AnchoredPosition: {x: 2.994995, y: 10.100006}
+  m_SizeDelta: {x: -5.830307, y: -4.279999}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &374044239
 MonoBehaviour:
@@ -523,19 +523,19 @@ MonoBehaviour:
     will be praised as a hero. You have defeated the villain of your story but how
     long will that last until a new villain appears? How long until you face a foe
     stronger than you can deal with?
-  braveHeroEnding: Your body goes limp, your sword falls to the ground, the cyclops
+  braveHeroEnding: 'Death is not the end, not for brave warriors such as thou. you
+    fought till your last breath and wounded your foe, you were not the chosen one,
+    rest now in the long goodnight and know you will be seen as no more than a predecessor
+    to the true hero of the land, who did what you could not. '
+  arrogantHeroEnding: Your body goes limp, your sword falls to the ground, the cyclops
     stands strong as if you were but an insect who will not be remembered. The villages
     you aimed to help will tell newcomers your story as a warning of overconfidence,
     your name will not be remembered but your failure will be enshrined.
-  arrogantHeroEnding: Death is not the end, not for brave warriors such as thou.
-    you fought till your last breath and wounded your foe, your sacrifice will allow
-    later parties to finish the job you failed to do, rest now in the long goodnight
-    and know you will be seen as no more than a predecessor to the true hero of the
-    land, who did what you could not.
   goodEnding: 0
   CurrentAction: {fileID: 0}
   time: 0
   maxAnimTime: 1
+  randomText: 0
 --- !u!1 &504246536
 GameObject:
   m_ObjectHideFlags: 0
@@ -904,6 +904,7 @@ GameObject:
   m_Component:
   - component: {fileID: 917156482}
   - component: {fileID: 917156481}
+  - component: {fileID: 917156483}
   m_Layer: 0
   m_Name: Cyclops
   m_TagString: Untagged
@@ -981,6 +982,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &917156483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 917156480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21120569a3eec404a88af5b39a7487e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cyclopsSprites:
+  - {fileID: 4809396141046213086, guid: 75d5e11c3fea18a4f90d136fd0e6a408, type: 3}
+  - {fileID: -52585953369219089, guid: 75d5e11c3fea18a4f90d136fd0e6a408, type: 3}
+  - {fileID: 1565726367, guid: 75d5e11c3fea18a4f90d136fd0e6a408, type: 3}
+  - {fileID: 1387664221, guid: 75d5e11c3fea18a4f90d136fd0e6a408, type: 3}
+  animationTime: 0
+  TimeBetweenSprites: 0.1
+  currentSprite: 0
+  swingingForward: 1
 --- !u!1 &922153531
 GameObject:
   m_ObjectHideFlags: 0

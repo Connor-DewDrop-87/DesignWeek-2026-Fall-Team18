@@ -132,9 +132,9 @@ TextureImporter:
       name: Base_Cyclops1
       rect:
         serializedVersion: 2
-        x: 38
+        x: 0
         y: 61
-        width: 41
+        width: 40
         height: 59
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -154,10 +154,10 @@ TextureImporter:
       name: ReadyAttack
       rect:
         serializedVersion: 2
-        x: 82
+        x: 44
         y: 61
         width: 37
-        height: 54
+        height: 59
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -216,6 +216,50 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: SwingAttack
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 61
+        width: 42
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8387fb0f1eb2fae4a9cf3278cea7cf15
+      internalID: 1565726367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FollowThrough
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 3
+        width: 46
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39b8764ec31747646956377485d22588
+      internalID: 1387664221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -232,8 +276,10 @@ TextureImporter:
     nameFileIdTable:
       Base_Cyclops1: 4809396141046213086
       Club: -970309686
+      FollowThrough: 1387664221
       Head: 39028428
       ReadyAttack: -52585953369219089
+      SwingAttack: 1565726367
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
