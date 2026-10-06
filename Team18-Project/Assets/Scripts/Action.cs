@@ -15,7 +15,8 @@ public class Action : MonoBehaviour
     public string[] failText; // Text when the player fails
     public string[] successText; // Text when the player succeeds
     public int rollsSinceEye = 0;
-
+    public int previousFailMessage;
+    public int previousSuccessMessage;
 
     void Start()
     {
@@ -58,7 +59,17 @@ public class Action : MonoBehaviour
     {
         if (die.dieLanded == 1)
         {
-            gm.randomText = Random.Range(0,failText.Length-1);
+            gm.randomText = Random.Range(0,failText.Length);
+            // Prevents the same message from appearing
+            if (gm.randomText==previousFailMessage)
+            {
+                gm.randomText++;
+                if (gm.randomText>=failText.Length)
+                {
+                    gm.randomText = 0;
+                }
+            }
+            previousFailMessage = gm.randomText;
             gm.state = GameManager.State.FAILEDACTION;
             // Reset Eye Chance
             if (rollsSinceEye > 2)
@@ -82,7 +93,17 @@ public class Action : MonoBehaviour
         }
         else
         {
-            gm.randomText = Random.Range(0, successText.Length - 1);
+            gm.randomText = Random.Range(0, successText.Length);
+            // Prevents the same message from appearing
+            if (gm.randomText == previousSuccessMessage)
+            {
+                gm.randomText++;
+                if (gm.randomText >= successText.Length)
+                {
+                    gm.randomText = 0;
+                }
+            }
+            previousSuccessMessage = gm.randomText;
             gm.state = GameManager.State.SUCCESSFULACTION;
             // Increase Eye Chance
             die.eyeChance += die.baseEyeChance;
