@@ -1,14 +1,21 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     // Player HP
     public float HPplayer = 10;
     public float maxHP;
+    public GameObject HPFillPlayer;
     // Cyclop Stats
     public float HPCyclops = 50;
     public float maxHPCyclops;
+    public GameObject HPFillCyclops;
+    // Heart Sprites
+    public Image HPHeartPlayer;
+    public Image HPHeartCyclops;
+    public Sprite[] heartSprites;
     public enum State
     {
         START,
@@ -44,11 +51,15 @@ public class GameManager : MonoBehaviour
         state = State.START;
         // Get Message Displayer
         messageDisplayer = GameObject.Find("MainTextBox").GetComponent<TextMeshProUGUI>();
+        // Connect to HPFills
+        HPFillPlayer = GameObject.Find("PlayerHPFill");
+        HPFillCyclops = GameObject.Find("CyclopsHPFill");
     }
 
     // Update is called once per frame
     void Update()
     {
+        CheckHPUI();
         CheckIfDeadOrWon();
         switch (state)
         {
@@ -133,6 +144,60 @@ public class GameManager : MonoBehaviour
                 break;
         }
     }
+
+    public void CheckHPUI()
+    {
+        // Check for Over MaxHP and Under 0 HP
+        if (HPplayer<0)
+        {
+            HPplayer = 0;
+        }
+        if (HPplayer>maxHP)
+        {
+            HPplayer = maxHP;
+        }
+        if (HPCyclops<0)
+        {
+            HPCyclops = 0;
+        }
+        if (HPCyclops>maxHPCyclops)
+        {
+            HPCyclops = maxHPCyclops;
+        }
+        // Get the HP Percentage for Scaling UI
+        float playerPercentage = HPplayer / maxHP;
+        float cyclopsPercentage = HPCyclops / maxHPCyclops;
+        // Show UI
+        HPFillPlayer.transform.localScale = new Vector3(playerPercentage, 1, 1);
+        HPFillCyclops.transform.localScale = new Vector3(cyclopsPercentage, 1, 1);
+        // Check if Sprite Change for Heart is Needed
+        // Player
+        if (playerPercentage>=0.75) // 75% or more HP
+        {
+            HPHeartPlayer.sprite = heartSprites[0];
+        }
+        else if (playerPercentage>=0.25) // 25%-75% HP
+        {
+            HPHeartPlayer.sprite = heartSprites[1];
+        }
+        else // Less than 25% HP
+        {
+            HPHeartPlayer.sprite = heartSprites[2];
+        }
+        // Cyclops
+        if (cyclopsPercentage>=0.75) // 75% or more HP
+        {
+            HPHeartCyclops.sprite = heartSprites[0];
+        }
+        else if (cyclopsPercentage>=0.25) // 25%-75% HP
+        {
+            HPHeartCyclops.sprite = heartSprites[1];
+        }
+        else // Less than 25% HP
+        {
+            HPHeartCyclops.sprite = heartSprites[2];
+        }
+    }
     public void CheckIfDeadOrWon()
     {
         // If the Player HP is below or at 0, kill the player
@@ -141,7 +206,7 @@ public class GameManager : MonoBehaviour
             state = State.DEAD;
             float cyclopsHPPercent = HPCyclops / maxHPCyclops;
             Debug.Log($"Cyclops: {cyclopsHPPercent}");
-            if (cyclopsHPPercent<=0.15f)
+            if (cyclopsHPPercent<=0.25f)
             {
                 goodEnding = true;
             }
@@ -152,7 +217,7 @@ public class GameManager : MonoBehaviour
             state = State.WON;
             float playerHPPercent = HPplayer / maxHP;
             Debug.Log($"Player: {playerHPPercent}");
-            if (playerHPPercent >= 0.15f)
+            if (playerHPPercent >= 0.25f)
             {
                 goodEnding = true;
             }
