@@ -1030,8 +1030,24 @@ MonoBehaviour:
   startText: 'You have finally caught up to the cyclops that has been spreading ruin
     through the lands, prepare your soul and steady your hands, this day you clash
     with fate beware of hate.  '
-  winText: 
-  deathText: 
+  folkHeroEnding: This day belongs to you, your sword drips with the blood of your
+    foe. The villages that were terrorized by this beast will sing your praise and
+    will tell stories of your victory to their children. You move on and seek your
+    next challenge hoping to go down in history.
+  fragileHeroEnding: The rampaging cyclops lays defeated, you have won this day and
+    will be praised as a hero. You have defeated the villain of your story but how
+    long will that last until a new villain appears? How long until you face a foe
+    stronger than you can deal with?
+  braveHeroEnding: Your body goes limp, your sword falls to the ground, the cyclops
+    stands strong as if you were but an insect who will not be remembered. The villages
+    you aimed to help will tell newcomers your story as a warning of overconfidence,
+    your name will not be remembered but your failure will be enshrined.
+  arrogantHeroEnding: Death is not the end, not for brave warriors such as thou.
+    you fought till your last breath and wounded your foe, your sacrifice will allow
+    later parties to finish the job you failed to do, rest now in the long goodnight
+    and know you will be seen as no more than a predecessor to the true hero of the
+    land, who did what you could not.
+  goodEnding: 0
   CurrentAction: {fileID: 0}
   time: 0
   maxAnimTime: 1

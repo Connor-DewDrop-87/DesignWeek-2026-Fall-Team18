@@ -18,6 +18,7 @@ public class Dielogic : MonoBehaviour
     {
         eyeChance = baseEyeChance;
         rollSpeed = maxRollSpeed;
+
     }
 
     // Update is called once per frame

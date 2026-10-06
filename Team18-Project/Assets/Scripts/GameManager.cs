@@ -4,11 +4,11 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     // Player HP
-    public int HPplayer = 10;
-    public int maxHP;
+    public float HPplayer = 10;
+    public float maxHP;
     // Cyclop Stats
-    public int HPCyclops = 50;
-    public int maxHPCyclops;
+    public float HPCyclops = 50;
+    public float maxHPCyclops;
     public enum State
     {
         START,
@@ -25,8 +25,11 @@ public class GameManager : MonoBehaviour
     // Text
     TextMeshProUGUI messageDisplayer;
     public string startText; // Text when the player starts the game
-    public string winText; // Text when the player defeats the Cyclops in the game
-    public string deathText; // Text when the player dies in the game
+    public string folkHeroEnding; // Text when the player defeats the Cyclops with greater than 15% HP
+    public string fragileHeroEnding; // Text when the player defeats the Cyclops with less than 15% HP
+    public string braveHeroEnding; // Text when the player is defeated by the Cyclops but the Cyclops is less than 15% HP
+    public string arrogantHeroEnding; // Text when the player is defeated by the Cyclops but the Cyclops is more than 15% HP
+    public bool goodEnding;
     // For Recieving Actions from OptionManager
     public Action CurrentAction;
     public float time = 0;
@@ -45,16 +48,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // If the Player HP is below or at 0, kill the player
-        if (HPplayer <= 0)
-        {
-            state = State.DEAD;
-        }
-        // If the Cyclops HP is below or at 0, the player wins
-        if (HPCyclops<=0)
-        {
-            state = State.WON;
-        }
+        CheckIfDeadOrWon();
         switch (state)
         {
             case GameManager.State.START: // Only Play at the Start
@@ -83,10 +77,10 @@ public class GameManager : MonoBehaviour
                 messageDisplayer.text = $"The Cyclops Brings Its Club Down for 3 Damage\n(Click Here)";
                 break;
             case GameManager.State.WON:
-                messageDisplayer.text = winText;
+                messageDisplayer.text = folkHeroEnding;
                 break;
             case GameManager.State.DEAD:
-                messageDisplayer.text = deathText;
+                messageDisplayer.text = braveHeroEnding;
                 break;
         }
     }
@@ -121,6 +115,31 @@ public class GameManager : MonoBehaviour
             case GameManager.State.DEAD:
                 // Go to Death Screen (Do Later)
                 break;
+        }
+    }
+    public void CheckIfDeadOrWon()
+    {
+        // If the Player HP is below or at 0, kill the player
+        if (HPplayer <= 0)
+        {
+            state = State.DEAD;
+            float cyclopsHPPercent = HPCyclops / maxHPCyclops;
+            Debug.Log($"Cyclops: {cyclopsHPPercent}");
+            if (cyclopsHPPercent<=0.15f)
+            {
+                goodEnding = true;
+            }
+        }
+        // If the Cyclops HP is below or at 0, the player wins
+        if (HPCyclops <= 0)
+        {
+            state = State.WON;
+            float playerHPPercent = HPplayer / maxHP;
+            Debug.Log($"Player: {playerHPPercent}");
+            if (playerHPPercent >= 0.15f)
+            {
+                goodEnding = true;
+            }
         }
     }
 }

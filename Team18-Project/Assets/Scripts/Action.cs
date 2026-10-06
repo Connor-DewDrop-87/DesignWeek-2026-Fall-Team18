@@ -57,6 +57,8 @@ public class Action : MonoBehaviour
                 gm.state = GameManager.State.SUCCESSFULACTION;
                 // Increase Eye Chance
                 die.eyeChance += die.baseEyeChance;
+                // Do Damage
+                gm.HPCyclops -= die.dieLanded;
             }
         }
     }
