@@ -30,35 +30,26 @@ public class CyclopAction : MonoBehaviour
             {
                 currentSprite++;
                 animationTime = 0;
-                if(currentSprite>4)
+                if (currentSprite >= 4)
                 {
                     currentSprite = 3;
                     swingingForward = false;
-                    return;
                 }
             }
             if (animationTime > TimeBetweenSprites && swingingForward==false)
             {
                 currentSprite--;
                 animationTime = 0;
-                
+                if (currentSprite < 0)
+                {
+                    currentSprite = 0;
+                    swingingForward = true;
+                }
             }
-
-
         }
         else
         {
             currentSprite = 0;
-        }
-        if (currentSprite >= 4)
-        {
-            currentSprite = 3;
-            swingingForward = false;
-        }
-        if (currentSprite < 0)
-        {
-            currentSprite = 0;
-            swingingForward = true;
         }
         Debug.Log($"Sprite: {currentSprite}");
         sr.sprite = cyclopsSprites[currentSprite];
