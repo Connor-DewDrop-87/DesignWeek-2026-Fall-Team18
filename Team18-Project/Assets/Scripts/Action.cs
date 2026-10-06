@@ -10,7 +10,10 @@ public class Action : MonoBehaviour
     // Die
     public Dielogic die;
     // Action Stuff
-    public string attackName; // Name of Attack
+    public string actionName; // Name of action
+    public float blockStrength = 0.75f;
+    public float currentBlockStrength = 0f;
+    public float blockDecay = 0.75f;
     public int power; // Amount of Damage/Healing it does
     public string[] failText; // Text when the player fails
     public string[] successText; // Text when the player succeeds
@@ -26,7 +29,7 @@ public class Action : MonoBehaviour
     }
     void Update()
     {
-        buttonText.text = $"{attackName}";
+        buttonText.text = $"{actionName}";
     }
     // Is used with a Button
     public void SelectActionPlayer()
@@ -45,12 +48,19 @@ public class Action : MonoBehaviour
 
     public void DoActionPlayer()
     {
-        if (attackName=="Attack")
+        if (!EyeLanded())
         {
-            if (!EyeLanded())
+            currentBlockStrength *= blockDecay;
+            if (actionName == "Attack")
             {
                 // Do Damage
                 gm.HPCyclops -= die.dieLanded;
+            } else if (actionName == "Block")
+            {
+                currentBlockStrength += blockStrength * (die.dieLanded / 6);
+            } else if (actionName == "Heal")
+            {
+                gm.HPplayer += Mathf.Floor(die.dieLanded / 2);
             }
         }
     }
