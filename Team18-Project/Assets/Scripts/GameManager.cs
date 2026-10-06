@@ -77,10 +77,25 @@ public class GameManager : MonoBehaviour
                 messageDisplayer.text = $"The Cyclops Brings Its Club Down for 3 Damage\n(Click Here)";
                 break;
             case GameManager.State.WON:
-                messageDisplayer.text = folkHeroEnding;
+                if (goodEnding==true)
+                {
+                    messageDisplayer.text = folkHeroEnding;
+                }
+                else
+                {
+                    messageDisplayer.text = fragileHeroEnding;
+                }
+
                 break;
             case GameManager.State.DEAD:
-                messageDisplayer.text = braveHeroEnding;
+                if (goodEnding == true)
+                {
+                    messageDisplayer.text = braveHeroEnding;
+                }
+                else
+                {
+                    messageDisplayer.text = arrogantHeroEnding;
+                }
                 break;
         }
     }

@@ -1,7 +1,12 @@
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Dielogic : MonoBehaviour
 {
+    public Image dieFaceSprite;
+    public Sprite[] dieFaces;
+    public TextMeshProUGUI eyeChanceText;
     public float baseEyeChance = 0.10f; // Base Chance to roll the eye (percent)
     public float eyeChance; // Chance to roll the eye
     public bool rolling = false; //Is the roll anamation currently playing
@@ -18,15 +23,18 @@ public class Dielogic : MonoBehaviour
     {
         eyeChance = baseEyeChance;
         rollSpeed = maxRollSpeed;
-
+        eyeChanceText = GameObject.Find("ChanceOfEye").GetComponent<TextMeshProUGUI>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        eyeChanceText.text = $"Eye Chance: {eyeChance*100}%";
         //play the roll animation
         if (rolling)
         {
+            // Display different die faces
+            dieFaceSprite.sprite = dieFaces[dieFace - 1];
             //for a number of secconds
             if (rollTimer <= rollTime)
             {
@@ -35,6 +43,7 @@ public class Dielogic : MonoBehaviour
                 if (nextFace >= rollSpeed)
                 {
                     dieFace = Random.Range(2, 7); //do not show the eye
+                    
                     ////SOUND EFFECT
                     rollSpeed += rollIncrement; //increase the number of frames between changes
                     nextFace = 0;
@@ -48,6 +57,7 @@ public class Dielogic : MonoBehaviour
                 nextFace = 0;
                 rollTimer = 0f;
                 dieFace = dieLanded;
+                dieFaceSprite.sprite = dieFaces[dieFace - 1];
                 ////start an animation of the die landing
             }
         }
