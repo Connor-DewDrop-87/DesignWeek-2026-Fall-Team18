@@ -7,6 +7,7 @@ public class Dielogic : MonoBehaviour
     public Image dieFaceSprite;
     public Sprite[] dieFaces;
     public TextMeshProUGUI eyeChanceText;
+    public AudioSource AudioSource;
     public Vector3 basePosition;
     public float shakeAmount = 20f;
     public Vector3 baseScale;
@@ -31,6 +32,7 @@ public class Dielogic : MonoBehaviour
         eyeChanceText = GameObject.Find("ChanceOfEye").GetComponent<TextMeshProUGUI>();
         basePosition = transform.position;
         baseScale = transform.localScale;
+        AudioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -48,8 +50,9 @@ public class Dielogic : MonoBehaviour
                 if (nextFace >= rollSpeed)
                 {
                     dieFace = Random.Range(2, 7); //do not show the eye
-                    
-                    ////SOUND EFFECT
+
+                    //SOUND EFFECT
+                    AudioSource.Play();
                     rollSpeed += rollIncrement; //increase the number of frames between changes
                     nextFace = 0;
                     if (transform.position == basePosition)
@@ -95,7 +98,7 @@ public class Dielogic : MonoBehaviour
         //draw the appropriate die sprite
         dieFaceSprite.sprite = dieFaces[dieFace - 1];
     }
-    //returns the nomber the die rolls as an int; 1 is the eye
+    //returns the number the die rolls as an int; 1 is the eye
     public int RollDie()
     {
         //start the animation
