@@ -1094,7 +1094,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2942823943379307754, guid: 5fb44c10c4bc7594ab4669788174034a, type: 3}
+  m_Sprite: {fileID: 4809396141046213086, guid: 75d5e11c3fea18a4f90d136fd0e6a408, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1114,7 +1114,7 @@ Transform:
   m_GameObject: {fileID: 917156480}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.11, y: 0.73, z: 0}
+  m_LocalPosition: {x: -1.11, y: 1.08, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1570,6 +1570,11 @@ MonoBehaviour:
   - {fileID: -8895966217502728624, guid: a2af03da0426a12438a5175ce3f07e53, type: 3}
   - {fileID: -8771915625222027849, guid: a2af03da0426a12438a5175ce3f07e53, type: 3}
   eyeChanceText: {fileID: 0}
+  basePosition: {x: 0, y: 0, z: 0}
+  shakeAmount: 20
+  baseScale: {x: 0, y: 0, z: 0}
+  scaleAmount: 0.1
+  scaleDecrease: 0.01
   baseEyeChance: 0.1
   eyeChance: 0
   rolling: 0

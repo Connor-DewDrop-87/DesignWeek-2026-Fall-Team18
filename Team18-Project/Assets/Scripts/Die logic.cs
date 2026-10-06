@@ -36,7 +36,7 @@ public class Dielogic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        eyeChanceText.text = $"Eye Chance: {eyeChance*100}%";
+        eyeChanceText.text = $"Eye Chance: {Mathf.Round(eyeChance*10000)/100}%";
         //play the roll animation
         if (rolling)
         {
