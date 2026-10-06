@@ -26,6 +26,7 @@ public class Action : MonoBehaviour
         // Connect to Game Manager and Text of the Action Button
         gm = GameObject.FindGameObjectWithTag("Player").GetComponent<GameManager>();
         buttonText = GetComponentInChildren<TextMeshProUGUI>();
+        currentBlockStrength = blockStrength;
     }
     void Update()
     {

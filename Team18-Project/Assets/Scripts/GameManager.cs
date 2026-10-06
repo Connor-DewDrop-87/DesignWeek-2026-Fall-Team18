@@ -126,7 +126,14 @@ public class GameManager : MonoBehaviour
                 state = State.READY;
                 break;
             case GameManager.State.SUCCESSFULACTION:
-                state = State.READY;
+                if (CurrentAction.actionName=="Block")
+                {
+                    state = State.CYCLOPSTURN;
+                }
+                else
+                {
+                    state = State.READY;
+                }   
                 break;
             case GameManager.State.FAILEDACTION:
                 state = State.CYCLOPSTURN;
@@ -136,17 +143,17 @@ public class GameManager : MonoBehaviour
                                                // Would Do it Every Frame
                 if (cyclopsAttackType == "Normal")
                 {
-                    cyclopsAttackDammage = cyclopsNormalDammage * (1 - act.currentBlockStrength);
+                    cyclopsAttackDammage = cyclopsNormalDammage * (1 - CurrentAction.currentBlockStrength);
                 } else if (cyclopsAttackType == "Power")
                 {
-                    cyclopsAttackDammage = cyclopsPowerDammage * (1 - act.currentBlockStrength);
+                    cyclopsAttackDammage = cyclopsPowerDammage * (1 - CurrentAction.currentBlockStrength);
                 } else if (cyclopsAttackType == "Eye Ray")
                 {
                     cyclopsAttackDammage = cyclopsNormalDammage;
                 }
                 //do the dammage and reset the block
                 HPplayer -= cyclopsAttackDammage;
-                act.currentBlockStrength = 0;
+                CurrentAction.currentBlockStrength = 0;
 
                 //Determine the what the next attack will be
                 //Done here so that the player can have warning and so the first attack is always normal
