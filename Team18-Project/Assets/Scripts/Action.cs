@@ -7,8 +7,10 @@ public class Action : MonoBehaviour
     GameManager gm;
     // Text
     TextMeshProUGUI buttonText;
+    // Die
+    Dielogic die;
     // Action Stuff
-    public string name; // Name of Attack
+    public string attackName; // Name of Attack
     public int baseFailChance; // Base Chance to Fail
     public int failChance; // Chance to Fail
     public int power; // Amount of Damage/Healing it does
@@ -26,7 +28,7 @@ public class Action : MonoBehaviour
     }
     void Update()
     {
-        buttonText.text = $"{name}\nCyclops Eyes: {(failChance)}";
+        buttonText.text = $"{attackName}\nCyclops Eyes: {(failChance)}";
     }
     // Is used with a Button
     public void DoActionPlayer()
@@ -39,21 +41,9 @@ public class Action : MonoBehaviour
         // Game Manager get the action
         gm.CurrentAction = this;
         // Otherwise, do the action
-        if (name=="Attack")
+        if (attackName=="Attack")
         {
-            
-            // Roll up to 6 (Ints are exclusive, so 7 is 6)
-            float dieRoll = Random.Range(1, 7);
-            if (dieRoll > failChance) // If they succeed, increase the fail chance
-            {
-                failChance++;
-                gm.state = GameManager.State.SUCCESSFULACTION;
-            }
-            else // If they fail, decrease the fail chance back to base
-            {
-                failChance = baseFailChance;
-                gm.state = GameManager.State.FAILEDACTION;
-            }
+            int result = die.RollDie();
         }
         Debug.Log("Did Action. YIPEE!!");
     }

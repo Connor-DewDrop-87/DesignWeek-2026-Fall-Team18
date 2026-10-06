@@ -1,0 +1,27 @@
+[2026-10-05T19:19:57.642Z][INFO] Command-line: 'C:\\Program Files\\Unity\\Hub\\Editor\\6000.6.2f1\\Editor\\Data\\Resources\\PackageManager\\Server\\UnityPackageManager.exe' server -s 51976 --ipc-path Unity-Upm-51976 -l 2 --log-file C:\\Users\\Brewh\\source\\repos\\DesignWeek-2026-Fall-Team18/Logs/upm.log
+[2026-10-05T19:19:57.708Z][INFO] IPC server started (IPC path=Unity-Upm-51976).
+[2026-10-05T19:19:57.708Z][INFO] Hint: To connect to this UPM instance, launch Unity with the command-line parameter -upmIpcPath Upm-51976.
+[2026-10-05T19:20:00.574Z][INFO] project:list-packages <-- Request received
+params: {}
+[2026-10-05T19:20:00.764Z][INFO] config:project:get-registries <-- Request received
+params: {}
+[2026-10-05T19:20:00.786Z][INFO] config:project:get-registries --> 200 (23 ms)
+[2026-10-05T19:20:00.814Z][INFO] project:list-packages --> 200 (240 ms)
+[2026-10-05T19:20:01.055Z][INFO] project:list-packages <-- Request received
+params: {}
+[2026-10-05T19:20:01.182Z][INFO] project:list-packages --> 200 (127 ms)
+[2026-10-05T19:20:04.144Z][INFO] project:list-packages <-- Request received
+params: {}
+[2026-10-05T19:20:04.242Z][INFO] project:list-packages <-- Request received
+params: {}
+[2026-10-05T19:20:04.271Z][INFO] project:list-packages --> 200 (127 ms)
+[2026-10-05T19:20:04.354Z][INFO] config:project:get-registries <-- Request received
+params: {}
+[2026-10-05T19:20:04.360Z][INFO] project:list-packages --> 200 (118 ms)
+[2026-10-05T19:20:04.362Z][INFO] config:project:get-registries --> 200 (9 ms)
+[2026-10-05T19:20:07.300Z][INFO] project:list-packages <-- Request received
+params: {}
+[2026-10-05T19:20:07.406Z][INFO] project:list-packages --> 200 (106 ms)
+[2026-10-05T19:20:10.429Z][INFO] project:list-packages <-- Request received
+params: {}
+[2026-10-05T19:20:10.821Z][INFO] project:list-packages --> 200 (392 ms)
