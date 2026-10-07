@@ -132,10 +132,10 @@ TextureImporter:
       name: Base_Cyclops1
       rect:
         serializedVersion: 2
-        x: 6
-        y: 217
-        width: 40
-        height: 59
+        x: 2
+        y: 218
+        width: 61
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,10 +154,10 @@ TextureImporter:
       name: ReadyAttack
       rect:
         serializedVersion: 2
-        x: 52
-        y: 217
-        width: 37
-        height: 59
+        x: 64
+        y: 218
+        width: 61
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -220,10 +220,10 @@ TextureImporter:
       name: SwingAttack
       rect:
         serializedVersion: 2
-        x: 95
-        y: 217
-        width: 39
-        height: 59
+        x: 126
+        y: 218
+        width: 61
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -242,10 +242,10 @@ TextureImporter:
       name: FollowThrough
       rect:
         serializedVersion: 2
-        x: 146
+        x: 188
         y: 218
-        width: 45
-        height: 59
+        width: 61
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -264,10 +264,10 @@ TextureImporter:
       name: EyeLaser
       rect:
         serializedVersion: 2
-        x: 6
-        y: 159
-        width: 42
-        height: 57
+        x: 2
+        y: 153
+        width: 61
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -286,10 +286,10 @@ TextureImporter:
       name: Laugh
       rect:
         serializedVersion: 2
-        x: 54
-        y: 158
-        width: 37
-        height: 59
+        x: 64
+        y: 153
+        width: 61
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -308,10 +308,10 @@ TextureImporter:
       name: DieClops
       rect:
         serializedVersion: 2
-        x: 99
-        y: 158
-        width: 38
-        height: 59
+        x: 126
+        y: 153
+        width: 61
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
