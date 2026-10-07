@@ -20,13 +20,14 @@ public class Action : MonoBehaviour
     public int rollsSinceEye = 0;
     public int previousFailMessage;
     public int previousSuccessMessage;
+    // Block Reference
+    public Action blockButton;
 
     void Start()
     {
         // Connect to Game Manager and Text of the Action Button
         gm = GameObject.FindGameObjectWithTag("Player").GetComponent<GameManager>();
         buttonText = GetComponentInChildren<TextMeshProUGUI>();
-        currentBlockStrength = blockStrength;
     }
     void Update()
     {
@@ -55,17 +56,17 @@ public class Action : MonoBehaviour
     {
         if (!EyeLanded())
         {
-            currentBlockStrength *= blockDecay;
+            blockButton.currentBlockStrength *= blockDecay;
             if (actionName == "Attack")
             {
                 // Do Damage
                 gm.HPCyclops -= die.dieLanded;
             } else if (actionName == "Block")
             {
-                currentBlockStrength += blockStrength * (die.dieLanded / 6);
+                currentBlockStrength += blockStrength * (die.dieLanded / 6f);
             } else if (actionName == "Heal")
             {
-                gm.HPplayer += Mathf.Floor(die.dieLanded / 2);
+                gm.HPplayer += Mathf.Floor(die.dieLanded / 2f);
             }
         }
     }
