@@ -291,7 +291,7 @@ TextureImporter:
         width: 37
         height: 59
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -300,6 +300,28 @@ TextureImporter:
       bones: []
       spriteID: f7c105ee3f4e8924ba93701865fb90ac
       internalID: 1843518841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DieClops
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 158
+        width: 38
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6f7d82af741b0f41971d26451337fb3
+      internalID: 1680675382
       vertices: []
       indices: 
       edges: []
@@ -320,6 +342,7 @@ TextureImporter:
     nameFileIdTable:
       Base_Cyclops1: 4809396141046213086
       Club: -970309686
+      DieClops: 1680675382
       EyeLaser: 176308227
       FollowThrough: 1387664221
       Head: 39028428

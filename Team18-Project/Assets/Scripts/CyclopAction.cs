@@ -76,7 +76,7 @@ public class CyclopAction : MonoBehaviour
             }
             
         }
-        else if (gm.state==GameManager.State.DEAD)
+        else if (gm.state==GameManager.State.DEAD) // If the Player Died, Play a little Animation
         {
             animationTime += Time.deltaTime;
             TimeBetweenSprites = 0.25f;
@@ -93,9 +93,9 @@ public class CyclopAction : MonoBehaviour
                 animationTime = 0;
             }
         }
-        else if (gm.state==GameManager.State.WON)
+        else if (gm.state==GameManager.State.WON) // If the Player Won, show the Cyclops Dead
         {
-
+            currentSprite = 6;
         }
         else
         {
