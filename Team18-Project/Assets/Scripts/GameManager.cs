@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
     public Image HPHeartPlayer;
     public Image HPHeartCyclops;
     public Sprite[] heartSprites;
+    public Sprite[] eyeSprites;
     public enum State
     {
         START,
@@ -272,15 +273,15 @@ public class GameManager : MonoBehaviour
         // Cyclops
         if (cyclopsPercentage>=0.75) // 75% or more HP
         {
-            HPHeartCyclops.sprite = heartSprites[0];
+            HPHeartCyclops.sprite = eyeSprites[0];
         }
         else if (cyclopsPercentage>=0.25) // 25%-75% HP
         {
-            HPHeartCyclops.sprite = heartSprites[1];
+            HPHeartCyclops.sprite = eyeSprites[1];
         }
         else // Less than 25% HP
         {
-            HPHeartCyclops.sprite = heartSprites[2];
+            HPHeartCyclops.sprite = eyeSprites[2];
         }
     }
     public void CheckIfDeadOrWon()
