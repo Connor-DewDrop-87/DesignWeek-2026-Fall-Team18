@@ -11,7 +11,6 @@ public class CyclopAction : MonoBehaviour
     public float TimeBetweenSprites = 0.2f;
     public int currentSprite;
     public bool swingingForward = true;
-    public bool blackEyeShown = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -29,25 +28,38 @@ public class CyclopAction : MonoBehaviour
             animationTime += Time.deltaTime;
             if (gm.cyclopsAttackType=="Eye Ray")
             {
-                if (blackEyeShown==true)
+                TimeBetweenSprites = 0.5f;
+                if (animationTime <= TimeBetweenSprites/4)
                 {
-                    TimeBetweenSprites = 0.2f;
+                    currentSprite = 0;
                 }
-                else
+                if (animationTime > TimeBetweenSprites/4 && animationTime <=  TimeBetweenSprites/2)
                 {
-                    TimeBetweenSprites = 0.1f;
+                    currentSprite = 4;
                 }
-                if (animationTime > TimeBetweenSprites && blackEyeShown==true)
+                if (animationTime > TimeBetweenSprites/2 && animationTime <=  TimeBetweenSprites*3/4)
                 {
-                    currentSprite=4;
+                    currentSprite = 5;
+                }
+                if (animationTime > TimeBetweenSprites*3/4 && animationTime <= TimeBetweenSprites)
+                {
+                    currentSprite = 6;
+                }
+                if (animationTime > TimeBetweenSprites && animationTime <=  TimeBetweenSprites*5/4)
+                {
+                    currentSprite = 5;
+                }
+                if (animationTime > TimeBetweenSprites * 5 / 4 && animationTime <= TimeBetweenSprites*3/2)
+                {
+                    currentSprite = 4;
+                }
+                if (animationTime > TimeBetweenSprites * 3 / 2 && animationTime <= TimeBetweenSprites*2)
+                {
+                    currentSprite = 0;
+                }
+                if (animationTime > TimeBetweenSprites*2)
+                {
                     animationTime = 0;
-                    blackEyeShown = false;
-                }
-                if (animationTime > TimeBetweenSprites && blackEyeShown == false)
-                {
-                    currentSprite=1;
-                    animationTime = 0;
-                    blackEyeShown = true;
                 }
             }
             else

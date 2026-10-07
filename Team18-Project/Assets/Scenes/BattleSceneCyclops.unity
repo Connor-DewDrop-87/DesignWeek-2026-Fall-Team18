@@ -739,9 +739,11 @@ MonoBehaviour:
   HPplayer: 10
   maxHP: 0
   HPFillPlayer: {fileID: 0}
+  HPFillPlayerDark: {fileID: 0}
   HPCyclops: 50
   maxHPCyclops: 0
   HPFillCyclops: {fileID: 0}
+  HPFillCyclopsDark: {fileID: 0}
   cyclopsAttackType: Normal
   cyclopsAttackDammage: 0
   cyclopsNormalDammage: 3
@@ -781,7 +783,6 @@ MonoBehaviour:
   time: 0
   maxAnimTime: 1
   randomText: 0
-  healthBarAnimSpeed: 20
 --- !u!1 &504246536
 GameObject:
   m_ObjectHideFlags: 0
@@ -1612,6 +1613,8 @@ MonoBehaviour:
   - {fileID: 1565726367, guid: 75d5e11c3fea18a4f90d136fd0e6a408, type: 3}
   - {fileID: 1387664221, guid: 75d5e11c3fea18a4f90d136fd0e6a408, type: 3}
   - {fileID: 176308227, guid: 75d5e11c3fea18a4f90d136fd0e6a408, type: 3}
+  - {fileID: 1420369025, guid: 75d5e11c3fea18a4f90d136fd0e6a408, type: 3}
+  - {fileID: 1323533175, guid: 75d5e11c3fea18a4f90d136fd0e6a408, type: 3}
   - {fileID: 1843518841, guid: 75d5e11c3fea18a4f90d136fd0e6a408, type: 3}
   - {fileID: 1680675382, guid: 75d5e11c3fea18a4f90d136fd0e6a408, type: 3}
   animationTime: 0
