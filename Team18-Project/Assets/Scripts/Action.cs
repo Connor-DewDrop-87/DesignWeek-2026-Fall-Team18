@@ -31,6 +31,10 @@ public class Action : MonoBehaviour
     void Update()
     {
         buttonText.text = $"{actionName}";
+        if (actionName=="Block")
+        {
+            buttonText.text += $"\nBlock Strength: {Mathf.Round(currentBlockStrength*10000)/100}%";
+        }
     }
     // Is used with a Button
     public void SelectActionPlayer()
