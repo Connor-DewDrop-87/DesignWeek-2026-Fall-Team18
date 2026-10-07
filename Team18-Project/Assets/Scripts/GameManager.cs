@@ -187,11 +187,11 @@ public class GameManager : MonoBehaviour
                 //Determine the what the next attack will be
                 //Done here so that the player can have warning and so the first attack is always normal
                 float t = Random.Range(0f, 1f);
-                if (t < 0.5f)
+                if (t < 0.70f)
                 {
                     cyclopsAttackType = "Normal";
                 }
-                else if (t < 0.75f)
+                else if (t < 0.85f)
                 {
                     cyclopsAttackType = "Power";
                 }
