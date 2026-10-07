@@ -7,6 +7,10 @@ public class TitleScreenManager : MonoBehaviour
     {
         SceneManager.LoadScene("BattleSceneCyclops");
     }
+    public void StartHardGame()
+    {
+        SceneManager.LoadScene("HardMode");
+    }
     public void BringUpInstructions()
     {
 

@@ -23,6 +23,9 @@ public class GameManager : MonoBehaviour
     public string cyclopsAttackType = "Normal";
     public float cyclopsAttackDammage = 0f;
     public float cyclopsNormalDammage = 3f;
+    public float cyclopsNormalTH;
+    public float cyclopsHeavyTH;
+    public float cyclopsLaserTH;
     public float cyclopsPowerDammage = 7f;
     // Heart Sprites
     public Image HPHeartPlayer;
@@ -180,11 +183,11 @@ public class GameManager : MonoBehaviour
                 //Determine the what the next attack will be
                 //Done here so that the player can have warning and so the first attack is always normal
                 float t = Random.Range(0f, 1f);
-                if (t < 0.70f)
+                if (t < cyclopsNormalTH)
                 {
                     cyclopsAttackType = "Normal";
                 }
-                else if (t < 0.85f)
+                else if (t < cyclopsHeavyTH)
                 {
                     cyclopsAttackType = "Power";
                 }
@@ -305,7 +308,7 @@ public class GameManager : MonoBehaviour
             state = State.DEAD;
             float cyclopsHPPercent = HPCyclops / maxHPCyclops;
             Debug.Log($"Cyclops: {cyclopsHPPercent}");
-            if (cyclopsHPPercent<=0.25f)
+            if (cyclopsHPPercent<=0.5f)
             {
                 goodEnding = true;
             }
@@ -316,7 +319,7 @@ public class GameManager : MonoBehaviour
             state = State.WON;
             float playerHPPercent = HPplayer / maxHP;
             Debug.Log($"Player: {playerHPPercent}");
-            if (playerHPPercent >= 0.25f)
+            if (playerHPPercent >= 0.5f)
             {
                 goodEnding = true;
             }
