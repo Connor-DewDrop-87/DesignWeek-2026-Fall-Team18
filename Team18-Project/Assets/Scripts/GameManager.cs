@@ -159,6 +159,7 @@ public class GameManager : MonoBehaviour
                 if (CurrentAction.actionName=="Block")
                 {
                     PrepareCyclopsTurn();
+                    
                 }
                 else
                 {
@@ -226,7 +227,6 @@ public class GameManager : MonoBehaviour
         HPplayer -= cyclopsAttackDammage;
         CurrentAction.currentBlockStrength = 0;
 
-        
         state = State.CYCLOPSTEXT;
     }
 

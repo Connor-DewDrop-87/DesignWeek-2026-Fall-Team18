@@ -27,30 +27,6 @@ public class CyclopAction : MonoBehaviour
         if(gm.state == GameManager.State.CYCLOPSTEXT)
         {
             animationTime += Time.deltaTime;
-            if (gm.cyclopsAttackType=="Normal")
-            {
-                TimeBetweenSprites = 0.1f;
-                if (animationTime > TimeBetweenSprites && swingingForward == true)
-                {
-                    currentSprite++;
-                    animationTime = 0;
-                    if (currentSprite >= 4)
-                    {
-                        currentSprite = 3;
-                        swingingForward = false;
-                    }
-                }
-                if (animationTime > TimeBetweenSprites && swingingForward == false)
-                {
-                    currentSprite--;
-                    animationTime = 0;
-                    if (currentSprite < 0)
-                    {
-                        currentSprite = 0;
-                        swingingForward = true;
-                    }
-                }
-            }
             if (gm.cyclopsAttackType=="Eye Ray")
             {
                 if (blackEyeShown==true)
@@ -74,9 +50,40 @@ public class CyclopAction : MonoBehaviour
                     blackEyeShown = true;
                 }
             }
+            else
+            {
+                if (gm.cyclopsAttackType == "Normal")
+                {
+                    TimeBetweenSprites = 0.1f;
+                }
+                else
+                {
+                    TimeBetweenSprites = 0.05f;
+                }   
+                if (animationTime > TimeBetweenSprites && swingingForward == true)
+                {
+                    currentSprite++;
+                    animationTime = 0;
+                    if (currentSprite >= 4)
+                    {
+                        currentSprite = 3;
+                        swingingForward = false;
+                    }
+                }
+                if (animationTime > TimeBetweenSprites && swingingForward == false)
+                {
+                    currentSprite--;
+                    animationTime = 0;
+                    if (currentSprite < 0)
+                    {
+                        currentSprite = 0;
+                        swingingForward = true;
+                    }
+                }
+            }
             
         }
-        else if (gm.state==GameManager.State.DEAD)
+        else if (gm.state==GameManager.State.DEAD) // If the Player Died, Play a little Animation
         {
             animationTime += Time.deltaTime;
             TimeBetweenSprites = 0.25f;
@@ -93,9 +100,9 @@ public class CyclopAction : MonoBehaviour
                 animationTime = 0;
             }
         }
-        else if (gm.state==GameManager.State.WON)
+        else if (gm.state==GameManager.State.WON) // If the Player Won, show the Cyclops Dead
         {
-
+            currentSprite = 6;
         }
         else
         {

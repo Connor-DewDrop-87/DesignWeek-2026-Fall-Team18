@@ -1382,10 +1382,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2071449317}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.075219184, y: 0.077214174}
-  m_AnchorMax: {x: 0.97847986, y: 1}
-  m_AnchoredPosition: {x: -27.453, y: -3}
-  m_SizeDelta: {x: 35.312, y: -3.5513}
+  m_AnchorMin: {x: 0.022000002, y: 0.077214174}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -7, y: -3}
+  m_SizeDelta: {x: 8.312, y: -3.5513}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &896811999
 MonoBehaviour:
@@ -1532,6 +1532,7 @@ MonoBehaviour:
   - {fileID: 1387664221, guid: 75d5e11c3fea18a4f90d136fd0e6a408, type: 3}
   - {fileID: 176308227, guid: 75d5e11c3fea18a4f90d136fd0e6a408, type: 3}
   - {fileID: 1843518841, guid: 75d5e11c3fea18a4f90d136fd0e6a408, type: 3}
+  - {fileID: 1680675382, guid: 75d5e11c3fea18a4f90d136fd0e6a408, type: 3}
   animationTime: 0
   TimeBetweenSprites: 0.1
   currentSprite: 0
@@ -2780,10 +2781,10 @@ RectTransform:
   - {fileID: 896811998}
   m_Father: {fileID: 648447006}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.059000004, y: 0.15676136}
-  m_AnchorMax: {x: 0.42400002, y: 0.55442953}
-  m_AnchoredPosition: {x: 1, y: -0.5}
-  m_SizeDelta: {x: 0, y: -1}
+  m_AnchorMin: {x: 0.102000006, y: 0.15676136}
+  m_AnchorMax: {x: 0.45900002, y: 0.55442953}
+  m_AnchoredPosition: {x: -4, y: -0.5}
+  m_SizeDelta: {x: 8, y: -1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2071449318
 MonoBehaviour:
