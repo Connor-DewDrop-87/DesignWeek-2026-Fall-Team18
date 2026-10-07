@@ -73,7 +73,20 @@ public class GameManager : MonoBehaviour
                 break;
             case GameManager.State.READY:
                 // Go Back Here when the Player is able to Act
-                messageDisplayer.text = "What do you do?\n(Click Actions Below)";
+                // Different Flavour Text based on whatever attack the Cyclops will do Next
+                if (cyclopsAttackType == "Normal")
+                {
+                    messageDisplayer.text = $"The Cyclops is raising its Club";
+                }
+                else if (cyclopsAttackType == "Power")
+                {
+                    messageDisplayer.text = $"The Cyclops Winding-Up for a Powerful Strike";
+                }
+                else if (cyclopsAttackType == "Eye Ray")
+                {
+                    messageDisplayer.text = $"The Cyclops is Preparing an Eye Ray";
+                }
+                messageDisplayer.text += "\nWhat do you do?\n(Click Actions Below)";
                 break;
             case GameManager.State.ROLLINGACTION:
                 messageDisplayer.text = $"Rolling...";
@@ -91,7 +104,24 @@ public class GameManager : MonoBehaviour
                 state = State.CYCLOPSTURN;
                 break;
             case GameManager.State.CYCLOPSTEXT:
-                messageDisplayer.text = $"The Cyclops Brings Its Club Down for 3 Damage\n(Click Here)";
+                // Different Flavour Texts based on what attack the cyclops did and whether or not it dealt damage
+                if (cyclopsAttackDammage==0)
+                {
+                    messageDisplayer.text = $"You successfully block the Cyclop's Attack";
+                }
+                else if (cyclopsAttackType == "Normal")
+                {
+                    messageDisplayer.text = $"The Cyclops hits you with its club for {cyclopsAttackDammage} Damage";
+                }
+                else if (cyclopsAttackType == "Power")
+                {
+                    messageDisplayer.text = $"The Cyclops batters you with its club {cyclopsAttackDammage} Damage";
+                }
+                else if (cyclopsAttackType == "Eye Ray")
+                {
+                    messageDisplayer.text = $"The Cyclops shoots an Eye Ray at you for {cyclopsAttackDammage} Damage";
+                }
+                messageDisplayer.text += $"\n(Click Here)";
                 break;
             case GameManager.State.WON:
                 if (goodEnding==true)
@@ -128,7 +158,7 @@ public class GameManager : MonoBehaviour
             case GameManager.State.SUCCESSFULACTION:
                 if (CurrentAction.actionName=="Block")
                 {
-                    state = State.CYCLOPSTURN;
+                    PrepareCyclopsTurn();
                 }
                 else
                 {
@@ -139,47 +169,26 @@ public class GameManager : MonoBehaviour
                 state = State.CYCLOPSTURN;
                 break;
             case GameManager.State.CYCLOPSTURN: // Deals damage on Click because, if it didn't
-                                               // It would kill the player immediatly as it Update
-                                               // Would Do it Every Frame
-                if (cyclopsAttackType == "Normal")
-                {
-                    Debug.Log("Normal Attack");
-                    cyclopsAttackDammage = cyclopsNormalDammage * (1 - CurrentAction.currentBlockStrength);
-                } else if (cyclopsAttackType == "Power")
-                {
-                    Debug.Log("Power Attack");
-                    cyclopsAttackDammage = cyclopsPowerDammage * (1 - CurrentAction.currentBlockStrength);
-                } else if (cyclopsAttackType == "Eye Ray")
-                {
-                    Debug.Log("Laser");
-                    cyclopsAttackDammage = cyclopsNormalDammage;
-                }
-                // If the damage is below 0, reset to 0 
-                if (cyclopsAttackDammage<0)
-                {
-                    cyclopsAttackDammage = 0;
-                }
-                //do the dammage and reset the block
-                HPplayer -= cyclopsAttackDammage;
-                CurrentAction.currentBlockStrength = 0;
-
+                                                // It would kill the player immediatly as it Update
+                                                // Would Do it Every Frame
+                PrepareCyclopsTurn();
+                break;
+            case State.CYCLOPSTEXT:
                 //Determine the what the next attack will be
                 //Done here so that the player can have warning and so the first attack is always normal
                 float t = Random.Range(0f, 1f);
                 if (t < 0.5f)
                 {
                     cyclopsAttackType = "Normal";
-                } else if (t < 0.75f)
+                }
+                else if (t < 0.75f)
                 {
                     cyclopsAttackType = "Power";
-                } else
+                }
+                else
                 {
                     cyclopsAttackType = "Eye Ray";
                 }
-                state = State.CYCLOPSTEXT;
-                break;
-            case State.CYCLOPSTEXT:
-                
                 state = State.READY;
                 break;
             case GameManager.State.WON:
@@ -190,10 +199,35 @@ public class GameManager : MonoBehaviour
                 break;
         }
     }
-
+    // Cyclops Turn is put here so that it can be referenced for Blocking
     public void PrepareCyclopsTurn()
     {
+        if (cyclopsAttackType == "Normal")
+        {
+            Debug.Log("Normal Attack");
+            cyclopsAttackDammage = cyclopsNormalDammage * (1 - CurrentAction.currentBlockStrength);
+        }
+        else if (cyclopsAttackType == "Power")
+        {
+            Debug.Log("Power Attack");
+            cyclopsAttackDammage = cyclopsPowerDammage * (1 - CurrentAction.currentBlockStrength);
+        }
+        else if (cyclopsAttackType == "Eye Ray")
+        {
+            Debug.Log("Laser");
+            cyclopsAttackDammage = cyclopsNormalDammage;
+        }
+        // If the damage is below 0, reset to 0 
+        if (cyclopsAttackDammage < 0)
+        {
+            cyclopsAttackDammage = 0;
+        }
+        //do the dammage and reset the block
+        HPplayer -= cyclopsAttackDammage;
+        CurrentAction.currentBlockStrength = 0;
 
+        
+        state = State.CYCLOPSTEXT;
     }
 
     public void CheckHPUI()
