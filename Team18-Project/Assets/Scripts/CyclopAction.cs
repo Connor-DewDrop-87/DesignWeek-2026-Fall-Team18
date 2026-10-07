@@ -27,30 +27,6 @@ public class CyclopAction : MonoBehaviour
         if(gm.state == GameManager.State.CYCLOPSTEXT)
         {
             animationTime += Time.deltaTime;
-            if (gm.cyclopsAttackType=="Normal")
-            {
-                TimeBetweenSprites = 0.1f;
-                if (animationTime > TimeBetweenSprites && swingingForward == true)
-                {
-                    currentSprite++;
-                    animationTime = 0;
-                    if (currentSprite >= 4)
-                    {
-                        currentSprite = 3;
-                        swingingForward = false;
-                    }
-                }
-                if (animationTime > TimeBetweenSprites && swingingForward == false)
-                {
-                    currentSprite--;
-                    animationTime = 0;
-                    if (currentSprite < 0)
-                    {
-                        currentSprite = 0;
-                        swingingForward = true;
-                    }
-                }
-            }
             if (gm.cyclopsAttackType=="Eye Ray")
             {
                 if (blackEyeShown==true)
@@ -72,6 +48,37 @@ public class CyclopAction : MonoBehaviour
                     currentSprite=1;
                     animationTime = 0;
                     blackEyeShown = true;
+                }
+            }
+            else
+            {
+                if (gm.cyclopsAttackType == "Normal")
+                {
+                    TimeBetweenSprites = 0.1f;
+                }
+                else
+                {
+                    TimeBetweenSprites = 0.05f;
+                }   
+                if (animationTime > TimeBetweenSprites && swingingForward == true)
+                {
+                    currentSprite++;
+                    animationTime = 0;
+                    if (currentSprite >= 4)
+                    {
+                        currentSprite = 3;
+                        swingingForward = false;
+                    }
+                }
+                if (animationTime > TimeBetweenSprites && swingingForward == false)
+                {
+                    currentSprite--;
+                    animationTime = 0;
+                    if (currentSprite < 0)
+                    {
+                        currentSprite = 0;
+                        swingingForward = true;
+                    }
                 }
             }
             
