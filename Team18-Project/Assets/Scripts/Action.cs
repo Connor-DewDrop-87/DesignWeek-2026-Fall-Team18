@@ -20,6 +20,8 @@ public class Action : MonoBehaviour
     public int rollsSinceEye = 0;
     public int previousFailMessage;
     public int previousSuccessMessage;
+    // Block Reference
+    public Action blockButton;
 
     void Start()
     {
@@ -54,7 +56,7 @@ public class Action : MonoBehaviour
     {
         if (!EyeLanded())
         {
-            currentBlockStrength *= blockDecay;
+            blockButton.currentBlockStrength *= blockDecay;
             if (actionName == "Attack")
             {
                 // Do Damage
