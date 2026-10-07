@@ -313,7 +313,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -7469671084087019599, guid: acfd1d6a650f9b642a5c9ba2edb04f12, type: 3}
+  m_Sprite: {fileID: -9150038586942285270, guid: 5fb3b86586bd20f49930e5b06c717db5, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -677,6 +677,10 @@ MonoBehaviour:
   - {fileID: -7469671084087019599, guid: acfd1d6a650f9b642a5c9ba2edb04f12, type: 3}
   - {fileID: -5809115978048229511, guid: acfd1d6a650f9b642a5c9ba2edb04f12, type: 3}
   - {fileID: 4275239027641033367, guid: acfd1d6a650f9b642a5c9ba2edb04f12, type: 3}
+  eyeSprites:
+  - {fileID: -9150038586942285270, guid: 5fb3b86586bd20f49930e5b06c717db5, type: 3}
+  - {fileID: -3143707152256572845, guid: 5fb3b86586bd20f49930e5b06c717db5, type: 3}
+  - {fileID: -9109554529815476203, guid: 5fb3b86586bd20f49930e5b06c717db5, type: 3}
   state: 0
   startText: 'You have finally caught up to the cyclops that has been spreading ruin
     through the lands, prepare your soul and steady your hands, this day you clash
@@ -2701,8 +2705,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 876564050}
   - {fileID: 78409273}
+  - {fileID: 876564050}
   m_Father: {fileID: 478988960}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.8308519}
