@@ -165,15 +165,7 @@ public class GameManager : MonoBehaviour
                 state = State.READY;
                 break;
             case GameManager.State.SUCCESSFULACTION:
-                if (CurrentAction.actionName=="Block")
-                {
-                    PrepareCyclopsTurn();
-                    
-                }
-                else
-                {
-                    state = State.READY;
-                }   
+                state = State.READY;  
                 break;
             case GameManager.State.FAILEDACTION:
                 state = State.CYCLOPSTURN;

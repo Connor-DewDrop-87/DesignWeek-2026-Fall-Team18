@@ -31,7 +31,7 @@ public class CyclopAction : MonoBehaviour
                 TimeBetweenSprites = 0.5f;
                 if (animationTime <= TimeBetweenSprites/4)
                 {
-                    currentSprite = 0;
+                    currentSprite = 1;
                 }
                 if (animationTime > TimeBetweenSprites/4 && animationTime <=  TimeBetweenSprites/2)
                 {
@@ -55,7 +55,7 @@ public class CyclopAction : MonoBehaviour
                 }
                 if (animationTime > TimeBetweenSprites * 3 / 2 && animationTime <= TimeBetweenSprites*2)
                 {
-                    currentSprite = 0;
+                    currentSprite = 1;
                 }
                 if (animationTime > TimeBetweenSprites*2)
                 {
@@ -103,7 +103,7 @@ public class CyclopAction : MonoBehaviour
             {
                 if (currentSprite==0)
                 {
-                    currentSprite = 5;
+                    currentSprite = 7;
                 }
                 else
                 {
@@ -114,7 +114,7 @@ public class CyclopAction : MonoBehaviour
         }
         else if (gm.state==GameManager.State.WON) // If the Player Won, show the Cyclops Dead
         {
-            currentSprite = 6;
+            currentSprite = 8;
         }
         else
         {
