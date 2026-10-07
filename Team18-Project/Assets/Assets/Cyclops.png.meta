@@ -132,8 +132,8 @@ TextureImporter:
       name: Base_Cyclops1
       rect:
         serializedVersion: 2
-        x: 0
-        y: 61
+        x: 6
+        y: 217
         width: 40
         height: 59
       alignment: 0
@@ -154,8 +154,8 @@ TextureImporter:
       name: ReadyAttack
       rect:
         serializedVersion: 2
-        x: 44
-        y: 61
+        x: 52
+        y: 217
         width: 37
         height: 59
       alignment: 0
@@ -176,8 +176,8 @@ TextureImporter:
       name: Head
       rect:
         serializedVersion: 2
-        x: 30
-        y: 134
+        x: 35
+        y: 291
         width: 20
         height: 21
       alignment: 0
@@ -198,8 +198,8 @@ TextureImporter:
       name: Club
       rect:
         serializedVersion: 2
-        x: 55
-        y: 134
+        x: 60
+        y: 291
         width: 46
         height: 15
       alignment: 0
@@ -220,10 +220,10 @@ TextureImporter:
       name: SwingAttack
       rect:
         serializedVersion: 2
-        x: 88
-        y: 61
-        width: 42
-        height: 58
+        x: 95
+        y: 217
+        width: 39
+        height: 59
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -242,10 +242,10 @@ TextureImporter:
       name: FollowThrough
       rect:
         serializedVersion: 2
-        x: 55
-        y: 3
-        width: 46
-        height: 55
+        x: 146
+        y: 218
+        width: 45
+        height: 59
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -264,12 +264,12 @@ TextureImporter:
       name: EyeLaser
       rect:
         serializedVersion: 2
-        x: 1
-        y: 2
-        width: 48
+        x: 6
+        y: 159
+        width: 42
         height: 57
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -278,6 +278,28 @@ TextureImporter:
       bones: []
       spriteID: 801c5d1beeeae3c4688427e3ba993916
       internalID: 176308227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laugh
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 158
+        width: 37
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7c105ee3f4e8924ba93701865fb90ac
+      internalID: 1843518841
       vertices: []
       indices: 
       edges: []
@@ -301,6 +323,7 @@ TextureImporter:
       EyeLaser: 176308227
       FollowThrough: 1387664221
       Head: 39028428
+      Laugh: 1843518841
       ReadyAttack: -52585953369219089
       SwingAttack: 1565726367
   mipmapLimitGroupName: 

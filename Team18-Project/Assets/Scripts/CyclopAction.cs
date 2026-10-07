@@ -76,8 +76,30 @@ public class CyclopAction : MonoBehaviour
             }
             
         }
+        else if (gm.state==GameManager.State.DEAD)
+        {
+            animationTime += Time.deltaTime;
+            TimeBetweenSprites = 0.25f;
+            if (animationTime > TimeBetweenSprites)
+            {
+                if (currentSprite==0)
+                {
+                    currentSprite = 5;
+                }
+                else
+                {
+                    currentSprite = 0;
+                }
+                animationTime = 0;
+            }
+        }
+        else if (gm.state==GameManager.State.WON)
+        {
+
+        }
         else
         {
+            animationTime = 0;
             currentSprite = 0;
         }
         Debug.Log($"Sprite: {currentSprite}");
