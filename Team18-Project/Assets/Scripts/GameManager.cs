@@ -113,26 +113,29 @@ public class GameManager : MonoBehaviour
                 messageDisplayer.text = $"{CurrentAction.successText[randomText]}\n(Click Here)";
                 break;
             case GameManager.State.FAILEDACTION:
-                messageDisplayer.text = $"{CurrentAction.failText[randomText]}\nCyclop's Turn (Click Here)";
+                string sv = CheckShieldValue();
+                messageDisplayer.text = $"{CurrentAction.failText[randomText]}\n{sv}\nCyclop's Turn (Click Here)";
                 state = State.CYCLOPSTURN;
                 break;
             case GameManager.State.CYCLOPSTEXT:
+                
                 // Different Flavour Texts based on what attack the cyclops did and whether or not it dealt damage
                 if (cyclopsAttackDammage==0)
                 {
-                    messageDisplayer.text = $"You successfully block the Cyclop's Attack";
+                    messageDisplayer.text = $"You successfully block the Cyclop's Club";
                 }
                 else if (cyclopsAttackType == "Normal")
                 {
-                    messageDisplayer.text = $"The Cyclops hits you with its club for {cyclopsAttackDammage} Damage";
+                    
+                    messageDisplayer.text = $"The Cyclops hits you with its club";
                 }
                 else if (cyclopsAttackType == "Power")
                 {
-                    messageDisplayer.text = $"The Cyclops batters you with its club {cyclopsAttackDammage} Damage";
+                    messageDisplayer.text = $"The Cyclops batters you with its club";
                 }
                 else if (cyclopsAttackType == "Eye Ray")
                 {
-                    messageDisplayer.text = $"The Cyclops shoots an Eye Ray at you for {cyclopsAttackDammage} Damage";
+                    messageDisplayer.text = $"The Cyclops shoots an Eye Ray at you";
                 }
                 messageDisplayer.text += $"\n(Click Here)";
                 break;
@@ -233,6 +236,23 @@ public class GameManager : MonoBehaviour
         blockButton.currentBlockStrength = 0;
 
         state = State.CYCLOPSTEXT;
+    }
+
+    public string CheckShieldValue()
+    {
+        if(blockButton.currentBlockStrength == 1)
+        {
+            return "In this time of peril your body knows what to do, your shield is masterfully placed to block most that is thrown your way";
+        }
+        if (blockButton.currentBlockStrength > 0.5 && blockButton.currentBlockStrength < 1)
+        {
+            return "Your shield is ready, you feel prepared, do not waver";
+        }
+        if (blockButton.currentBlockStrength >= 0.1 && blockButton.currentBlockStrength <= 0.5)
+        {
+            return "Your arm is heavy but still trying its best to keep your shield raised.";
+        }
+        return "You have neglected your shield and left it at your side, preparing for a world of hurt.";
     }
 
     public void CheckHPUI()

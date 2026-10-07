@@ -17,7 +17,6 @@ public class Action : MonoBehaviour
     public int power; // Amount of Damage/Healing it does
     public string[] failText; // Text when the player fails
     public string[] successText; // Text when the player succeeds
-    public string[] blockTexts; // For Block Action Only
     public int rollsSinceEye = 0;
     public int previousFailMessage;
     public int previousSuccessMessage;
