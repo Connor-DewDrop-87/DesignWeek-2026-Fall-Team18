@@ -4,7 +4,8 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
-    Action act;
+    // Block Reference
+    public Action blockButton;
     // Player HP
     public float HPplayer = 10;
     public float maxHP;
@@ -207,12 +208,12 @@ public class GameManager : MonoBehaviour
         if (cyclopsAttackType == "Normal")
         {
             Debug.Log("Normal Attack");
-            cyclopsAttackDammage = cyclopsNormalDammage * (1 - CurrentAction.currentBlockStrength);
+            cyclopsAttackDammage = cyclopsNormalDammage * (1 - blockButton.currentBlockStrength);
         }
         else if (cyclopsAttackType == "Power")
         {
             Debug.Log("Power Attack");
-            cyclopsAttackDammage = cyclopsPowerDammage * (1 - CurrentAction.currentBlockStrength);
+            cyclopsAttackDammage = cyclopsPowerDammage * (1 - blockButton.currentBlockStrength);
         }
         else if (cyclopsAttackType == "Eye Ray")
         {
@@ -226,7 +227,7 @@ public class GameManager : MonoBehaviour
         }
         //do the dammage and reset the block
         HPplayer -= cyclopsAttackDammage;
-        CurrentAction.currentBlockStrength = 0;
+        blockButton.currentBlockStrength = 0;
 
         state = State.CYCLOPSTEXT;
     }
