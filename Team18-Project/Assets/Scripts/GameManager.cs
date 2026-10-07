@@ -9,10 +9,16 @@ public class GameManager : MonoBehaviour
     public float HPplayer = 10;
     public float maxHP;
     public GameObject HPFillPlayer;
+    public GameObject HPFillPlayerDark;
+    float playerPercentage = 1f;
+    float playerPercentage2 = 1f;
     // Cyclop Stats
+    float cyclopsPercentage = 1f;
+    float cyclopsPercentage2 = 1f;
     public float HPCyclops = 50;
     public float maxHPCyclops;
     public GameObject HPFillCyclops;
+    public GameObject HPFillCyclopsDark;
     public string cyclopsAttackType = "Normal";
     public float cyclopsAttackDammage = 0f;
     public float cyclopsNormalDammage = 3f;
@@ -60,6 +66,8 @@ public class GameManager : MonoBehaviour
         // Connect to HPFills
         HPFillPlayer = GameObject.Find("PlayerHPFill");
         HPFillCyclops = GameObject.Find("CyclopsHPFill");
+        HPFillPlayerDark = GameObject.Find("PlayerHPFill Dark");
+        HPFillCyclopsDark = GameObject.Find("CyclopsHPFill Dark");
     }
 
     // Update is called once per frame
@@ -251,11 +259,23 @@ public class GameManager : MonoBehaviour
             HPCyclops = maxHPCyclops;
         }
         // Get the HP Percentage for Scaling UI
-        float playerPercentage = HPplayer / maxHP;
-        float cyclopsPercentage = HPCyclops / maxHPCyclops;
+        playerPercentage = HPplayer / maxHP;
+        cyclopsPercentage = HPCyclops / maxHPCyclops;
         // Show UI
         HPFillPlayer.transform.localScale = new Vector3(playerPercentage, 1, 1);
         HPFillCyclops.transform.localScale = new Vector3(cyclopsPercentage, 1, 1);
+        //Underbar
+        if (playerPercentage2 > playerPercentage)
+        {
+            playerPercentage2 -= 0.10f * Time.deltaTime;
+        }
+        if (cyclopsPercentage2 > cyclopsPercentage)
+        {
+            cyclopsPercentage2 -= 0.05f * Time.deltaTime;
+        }
+        // Show UI
+        HPFillPlayerDark.transform.localScale = new Vector3(playerPercentage2, 1, 1);
+        HPFillCyclopsDark.transform.localScale = new Vector3(cyclopsPercentage2, 1, 1);
         // Check if Sprite Change for Heart is Needed
         // Player
         if (playerPercentage>=0.75) // 75% or more HP
