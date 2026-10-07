@@ -736,6 +736,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49f75fc4ec801e842a429249c3502cc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  blockButton: {fileID: 1263510871}
   HPplayer: 10
   maxHP: 0
   HPFillPlayer: {fileID: 0}
@@ -1954,20 +1955,17 @@ MonoBehaviour:
   blockDecay: 0.75
   power: 0
   failText:
-  - 'Your blade glances off the cyclops thick skin. '
-  - "Your aim is true\u2026 if you were aiming for that tree."
-  - 'The wind sings as your powerful blow misses and causes you to spin. '
-  - You swing wide and miss the target that should be too big to miss.
-  - 'The blade slips from your hands and you stumble to pick it up. '
+  - 'You distract yourself with your wounds. The cyclops won''t let this opportunity
+    pass.  '
+  - "You intentionably rub some dirt in your wound\u2026 why would you do such a
+    thing??"
   successText:
-  - Your blade finds its mark and cuts deep into the foe.
-  - 'Your aim is true this day, don''t get cocky the victor is yet to be decided. '
-  - The cyclops shrieks as you stab into its body.
-  - Your blade grazes the foe's neck.
+  - 'Your hands work swiftly wrapping your wounds. '
+  - 'Wounds are covered, get back to the task at hand '
+  blockTexts: []
   rollsSinceEye: 0
   previousFailMessage: 0
   previousSuccessMessage: 0
-  blockButton: {fileID: 1263510871}
 --- !u!114 &1107022515
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2121,20 +2119,17 @@ MonoBehaviour:
   blockDecay: 0.75
   power: 0
   failText:
-  - 'Your blade glances off the cyclops thick skin. '
-  - "Your aim is true\u2026 if you were aiming for that tree."
-  - 'The wind sings as your powerful blow misses and causes you to spin. '
-  - You swing wide and miss the target that should be too big to miss.
-  - 'The blade slips from your hands and you stumble to pick it up. '
+  - 'Your shield strap unties and causes your shield to go flying, prepare for the
+    consequences '
+  - Your shield strap unties and causes your shield to go flying, prepare for the
+    consequences
   successText:
-  - Your blade finds its mark and cuts deep into the foe.
-  - 'Your aim is true this day, don''t get cocky the victor is yet to be decided. '
-  - The cyclops shrieks as you stab into its body.
-  - Your blade grazes the foe's neck.
+  - 'You ready your shield and feel prepared to block the foes attack '
+  - Shield at the ready, don't falter in your stance
+  blockTexts: []
   rollsSinceEye: 0
   previousFailMessage: 0
   previousSuccessMessage: 0
-  blockButton: {fileID: 1263510871}
 --- !u!114 &1263510872
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2753,10 +2748,10 @@ MonoBehaviour:
   - 'Your aim is true this day, don''t get cocky the victor is yet to be decided. '
   - The cyclops shrieks as you stab into its body.
   - Your blade grazes the foe's neck.
+  blockTexts: []
   rollsSinceEye: 0
   previousFailMessage: 0
   previousSuccessMessage: 0
-  blockButton: {fileID: 1263510871}
 --- !u!1 &1699620291
 GameObject:
   m_ObjectHideFlags: 0
