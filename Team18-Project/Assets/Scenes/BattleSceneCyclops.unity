@@ -1531,6 +1531,7 @@ MonoBehaviour:
   - {fileID: 1565726367, guid: 75d5e11c3fea18a4f90d136fd0e6a408, type: 3}
   - {fileID: 1387664221, guid: 75d5e11c3fea18a4f90d136fd0e6a408, type: 3}
   - {fileID: 176308227, guid: 75d5e11c3fea18a4f90d136fd0e6a408, type: 3}
+  - {fileID: 1843518841, guid: 75d5e11c3fea18a4f90d136fd0e6a408, type: 3}
   animationTime: 0
   TimeBetweenSprites: 0.1
   currentSprite: 0
@@ -1824,7 +1825,7 @@ GameObject:
   - component: {fileID: 1107022515}
   - component: {fileID: 1107022514}
   m_Layer: 5
-  m_Name: AttackButton (2)
+  m_Name: HealButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1864,7 +1865,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   die: {fileID: 1472149328}
   actionName: Heal
-  blockStrength: 0.75
+  blockStrength: 0
   currentBlockStrength: 0
   blockDecay: 0.75
   power: 0
@@ -1990,7 +1991,7 @@ GameObject:
   - component: {fileID: 1263510872}
   - component: {fileID: 1263510871}
   m_Layer: 5
-  m_Name: AttackButton (1)
+  m_Name: 'BlockButton '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2651,7 +2652,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   die: {fileID: 1472149328}
   actionName: Attack
-  blockStrength: 0.75
+  blockStrength: 0
   currentBlockStrength: 0
   blockDecay: 0.75
   power: 0
