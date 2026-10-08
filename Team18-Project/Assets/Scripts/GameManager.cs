@@ -173,7 +173,7 @@ public class GameManager : MonoBehaviour
                 state = State.READY;
                 break;
             case GameManager.State.SUCCESSFULACTION:
-                state = State.READY;  
+                state = State.READY;
                 break;
             case GameManager.State.FAILEDACTION:
                 state = State.CYCLOPSTURN;
@@ -254,7 +254,7 @@ public class GameManager : MonoBehaviour
         {
             return "Your arm is heavy but still trying its best to keep your shield raised.";
         }
-        return "You have neglected your shield and left it at your side, preparing for a world of hurt.";
+        return "You have neglected your shield and left it at your side, prepare for a world of hurt.";
     }
 
     public void CheckHPUI()

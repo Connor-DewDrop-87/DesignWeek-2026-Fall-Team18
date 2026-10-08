@@ -11,6 +11,9 @@ public class CyclopAction : MonoBehaviour
     public float TimeBetweenSprites = 0.2f;
     public int currentSprite;
     public bool swingingForward = true;
+    // Audio Source
+    AudioSource ass; // Audio Source Secretive
+    public AudioClip[] clips; // Clips for Cyclops
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -18,6 +21,7 @@ public class CyclopAction : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
         // Sprite 1 is the base Cyclops
         sr.sprite = cyclopsSprites[0];
+        ass = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -25,6 +29,8 @@ public class CyclopAction : MonoBehaviour
     {
         if(gm.state == GameManager.State.CYCLOPSTEXT)
         {
+            int chosenActionSound = 0;
+            
             animationTime += Time.deltaTime;
             if (gm.cyclopsAttackType=="Eye Ray")
             {
@@ -88,6 +94,7 @@ public class CyclopAction : MonoBehaviour
             }
             else
             {
+                
                 TimeBetweenSprites = 0.3f;
                 if (animationTime <= TimeBetweenSprites / 4)
                 {
@@ -110,10 +117,19 @@ public class CyclopAction : MonoBehaviour
                     animationTime = 0;
                 }
             }
-            
+            if (ass.isPlaying == false)
+            {
+                ass.clip = clips[chosenActionSound];
+                ass.Play();
+            }
         }
         else if (gm.state==GameManager.State.DEAD) // If the Player Died, Play a little Animation
         {
+            if (ass.isPlaying==false)
+            {
+                ass.clip = clips[0];
+                ass.Play();
+            }
             animationTime += Time.deltaTime;
             TimeBetweenSprites = 0.25f;
             if (animationTime > TimeBetweenSprites)
@@ -132,6 +148,19 @@ public class CyclopAction : MonoBehaviour
         else if (gm.state==GameManager.State.WON) // If the Player Won, show the Cyclops Dead
         {
             currentSprite = 8;
+        }
+        else if (gm.state==GameManager.State.SUCCESSFULACTION) // If the Player Won, show the Cyclops Dead
+        {
+            if (ass.isPlaying == false)
+            {
+                if (gm.CurrentAction.actionName=="Attack")
+                {
+                    ass.clip = clips[1];
+                    ass.Play();
+                }
+            }
+            animationTime = 0;
+            currentSprite = 0;
         }
         else
         {
