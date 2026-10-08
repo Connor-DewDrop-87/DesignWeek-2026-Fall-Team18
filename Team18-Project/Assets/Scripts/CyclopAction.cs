@@ -11,6 +11,7 @@ public class CyclopAction : MonoBehaviour
     public float TimeBetweenSprites = 0.2f;
     public int currentSprite;
     public bool swingingForward = true;
+    public bool hasPlayed = false;
     // Audio Source
     AudioSource ass; // Audio Source Secretive
     public AudioClip[] clips; // Clips for Cyclops
@@ -124,11 +125,11 @@ public class CyclopAction : MonoBehaviour
                 chosenActionSound = 5;
             }
             ass.clip = clips[chosenActionSound];
-            if (ass.isPlaying == false)
+            if (hasPlayed == false)
             {
-                
                 ass.Play();
             }
+            hasPlayed = true;
         }
         else if (gm.state==GameManager.State.DEAD) // If the Player Died, Play a little Animation
         {
@@ -158,25 +159,36 @@ public class CyclopAction : MonoBehaviour
         }
         else if (gm.state==GameManager.State.SUCCESSFULACTION) // If the Player's action is successful, play a specific sound
         {
-            if (ass.isPlaying == false)
+            if (hasPlayed == false)
             {
                 if (gm.CurrentAction.actionName=="Attack")
                 {
                     ass.clip = clips[1];
                     ass.Play();
                 }
-
+                if (gm.CurrentAction.actionName=="Heal")
+                {
+                    ass.clip = clips[6];
+                    ass.Play();
+                }
+                if (gm.CurrentAction.actionName=="Block")
+                {
+                    ass.clip = clips[5];
+                    ass.Play();
+                }
             }
+            hasPlayed = true;
             animationTime = 0;
             currentSprite = 0;
         }
         else if (gm.state==GameManager.State.FAILEDACTION) // If the Player's action is failed, play a specific sound
         {
-            if (ass.isPlaying == false)
+            if (hasPlayed == false)
             {
                 ass.clip = clips[0];
                 ass.Play();
             }
+            hasPlayed = true;
             animationTime = 0;
             currentSprite = 0;
         }
@@ -184,6 +196,7 @@ public class CyclopAction : MonoBehaviour
         {
             animationTime = 0;
             currentSprite = 0;
+            hasPlayed = false;
         }
         sr.sprite = cyclopsSprites[currentSprite];
     }
