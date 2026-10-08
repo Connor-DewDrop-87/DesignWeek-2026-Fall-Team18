@@ -34,6 +34,7 @@ public class CyclopAction : MonoBehaviour
             animationTime += Time.deltaTime;
             if (gm.cyclopsAttackType=="Eye Ray")
             {
+                chosenActionSound = 2;
                 TimeBetweenSprites = 0.5f;
                 if (animationTime <= TimeBetweenSprites/4)
                 {
@@ -70,6 +71,7 @@ public class CyclopAction : MonoBehaviour
             }
             else if (gm.cyclopsAttackType == "Normal")
             {
+                chosenActionSound = 3;
                 TimeBetweenSprites = 0.1f; 
                 if (animationTime > TimeBetweenSprites && swingingForward == true)
                 {
@@ -94,7 +96,7 @@ public class CyclopAction : MonoBehaviour
             }
             else
             {
-                
+                chosenActionSound = 4;
                 TimeBetweenSprites = 0.3f;
                 if (animationTime <= TimeBetweenSprites / 4)
                 {
@@ -116,6 +118,10 @@ public class CyclopAction : MonoBehaviour
                 {
                     animationTime = 0;
                 }
+            }
+            if (gm.cyclopsAttackDammage==0)
+            {
+                chosenActionSound = 5;
             }
             if (ass.isPlaying == false)
             {
@@ -149,7 +155,7 @@ public class CyclopAction : MonoBehaviour
         {
             currentSprite = 8;
         }
-        else if (gm.state==GameManager.State.SUCCESSFULACTION) // If the Player Won, show the Cyclops Dead
+        else if (gm.state==GameManager.State.SUCCESSFULACTION) // If the Player's action is successful, play a specific sound
         {
             if (ass.isPlaying == false)
             {
@@ -158,6 +164,17 @@ public class CyclopAction : MonoBehaviour
                     ass.clip = clips[1];
                     ass.Play();
                 }
+
+            }
+            animationTime = 0;
+            currentSprite = 0;
+        }
+        else if (gm.state==GameManager.State.FAILEDACTION) // If the Player's action is failed, play a specific sound
+        {
+            if (ass.isPlaying == false)
+            {
+                ass.clip = clips[0];
+                ass.Play();
             }
             animationTime = 0;
             currentSprite = 0;
