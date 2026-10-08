@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class TitleScreenManager : MonoBehaviour
 {
-    public GameObject instructions;
+    public GameObject instructionsPage;
     public void StartGame()
     {
         SceneManager.LoadScene("BattleSceneCyclops");
@@ -13,6 +13,10 @@ public class TitleScreenManager : MonoBehaviour
     }
     public void BringUpInstructions()
     {
-
+        instructionsPage.SetActive(true);
+    }
+    public void GoAwayInstructions()
+    {
+        instructionsPage.SetActive(false);
     }
 }
