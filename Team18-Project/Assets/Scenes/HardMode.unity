@@ -741,7 +741,7 @@ MonoBehaviour:
   maxHP: 0
   HPFillPlayer: {fileID: 0}
   HPFillPlayerDark: {fileID: 0}
-  HPCyclops: 30
+  HPCyclops: 50
   maxHPCyclops: 0
   HPFillCyclops: {fileID: 0}
   HPFillCyclopsDark: {fileID: 0}

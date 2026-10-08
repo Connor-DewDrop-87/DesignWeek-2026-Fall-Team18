@@ -1,7 +1,8 @@
+using System;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     // Block Reference
@@ -78,7 +79,6 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         CheckHPUI();
-        
         switch (state)
         {
             case GameManager.State.START: // Only Play at the Start
@@ -86,19 +86,36 @@ public class GameManager : MonoBehaviour
                 break;
             case GameManager.State.READY:
                 CheckIfDeadOrWon();
+                // Check Block Button for Die to get the Chance of Eye
+                if (blockButton.die.eyeChance <= 0.1f) // Less than or equal to 10%
+                {
+                    messageDisplayer.text = "The cyclops guard is down, now's your chance to strike";
+                }
+                else if (blockButton.die.eyeChance <= 0.3f) // Less than or equal to 30%
+                {
+                    messageDisplayer.text = "You expect the cyclops to be growing impatient, don't become complacent";
+                }
+                else if (blockButton.die.eyeChance <= 0.5f) // Less than or equal to 50% 
+                {
+                    messageDisplayer.text = "You notice the cyclops becoming more erratic, don’t get distracted";
+                }
+                else // Greater than 50%
+                {
+                    messageDisplayer.text = "The cyclops is furious, keep your guard up";
+                }
                 // Go Back Here when the Player is able to Act
                 // Different Flavour Text based on whatever attack the Cyclops will do Next
                 if (cyclopsAttackType == "Normal")
                 {
-                    messageDisplayer.text = $"The Cyclops is raising its Club";
+                    messageDisplayer.text += $"\nThe Cyclops is raising its Club";
                 }
                 else if (cyclopsAttackType == "Power")
                 {
-                    messageDisplayer.text = $"The Cyclops is reaching for a Boulder";
+                    messageDisplayer.text += $"\nThe Cyclops is reaching for a Boulder";
                 }
                 else if (cyclopsAttackType == "Eye Ray")
                 {
-                    messageDisplayer.text = $"The Cyclops is Preparing an Eye Ray";
+                    messageDisplayer.text += $"\nThe Cyclops is Preparing an Eye Ray";
                 }
                 messageDisplayer.text += "\nWhat do you do?\n(Click Actions Below)";
                 break;
@@ -186,7 +203,7 @@ public class GameManager : MonoBehaviour
             case State.CYCLOPSTEXT:
                 //Determine the what the next attack will be
                 //Done here so that the player can have warning and so the first attack is always normal
-                float t = Random.Range(0.000f, 1.000f);
+                float t = UnityEngine.Random.Range(0.000f, 1.000f);
                 Debug.Log($"Rolled a :{t}");
                 if (t < cyclopsNormalTH)
                 {
@@ -242,7 +259,7 @@ public class GameManager : MonoBehaviour
 
     public string CheckShieldValue()
     {
-        if(blockButton.currentBlockStrength == 1)
+        if(blockButton.currentBlockStrength >= 1)
         {
             return "In this time of peril your body knows what to do, your shield is masterfully placed to block most that is thrown your way";
         }

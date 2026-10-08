@@ -621,7 +621,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1612762055}
         m_TargetAssemblyTypeName: TitleScreenManager, Assembly-CSharp
-        m_MethodName: StartGame
+        m_MethodName: StartHardGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

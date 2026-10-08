@@ -123,9 +123,10 @@ public class CyclopAction : MonoBehaviour
             {
                 chosenActionSound = 5;
             }
+            ass.clip = clips[chosenActionSound];
             if (ass.isPlaying == false)
             {
-                ass.clip = clips[chosenActionSound];
+                
                 ass.Play();
             }
         }
