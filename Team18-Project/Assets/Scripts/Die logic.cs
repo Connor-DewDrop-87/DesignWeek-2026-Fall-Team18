@@ -29,7 +29,6 @@ public class Dielogic : MonoBehaviour
     {
         eyeChance = baseEyeChance;
         rollSpeed = maxRollSpeed;
-        eyeChanceText = GameObject.Find("ChanceOfEye").GetComponent<TextMeshProUGUI>();
         basePosition = transform.position;
         baseScale = transform.localScale;
         AudioSource = GetComponent<AudioSource>();
@@ -38,7 +37,6 @@ public class Dielogic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        eyeChanceText.text = $"Eye Chance: {Mathf.Round(eyeChance*10000)/100}%";
         //play the roll animation
         if (rolling)
         {
