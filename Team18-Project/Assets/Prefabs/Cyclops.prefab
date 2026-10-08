@@ -117,9 +117,10 @@ MonoBehaviour:
   TimeBetweenSprites: 0.1
   currentSprite: 0
   swingingForward: 1
+  hasPlayed: 0
   clips:
   - {fileID: 8300000, guid: 259ebe7d69d54c94eb28a17776cea9fc, type: 3}
-  - {fileID: 8300000, guid: 44f98377096bccc449e25acef93c509c, type: 3}
+  - {fileID: 8300000, guid: 01a7a8b027325c54ab2b84efe16415a5, type: 3}
   - {fileID: 8300000, guid: 3311afac86e0af0499a5c1ed5a10620c, type: 3}
   - {fileID: 8300000, guid: b749f36b6a134a7448f698b739c7d526, type: 3}
   - {fileID: 8300000, guid: f7b813f535054be4fb82e984f4485e11, type: 3}

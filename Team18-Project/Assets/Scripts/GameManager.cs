@@ -308,6 +308,14 @@ public class GameManager : MonoBehaviour
         {
             cyclopsPercentage2 -= 0.05f * Time.deltaTime;
         }
+        if (playerPercentage2 < 0)
+        {
+            playerPercentage = 0;
+        }
+        if (cyclopsPercentage2 < 0)
+        {
+            cyclopsPercentage2 = 0;
+        }
         // Show UI
         HPFillPlayerDark.transform.localScale = new Vector3(playerPercentage2, 1, 1);
         HPFillCyclopsDark.transform.localScale = new Vector3(cyclopsPercentage2, 1, 1);
