@@ -1,6 +1,6 @@
 .button {
     width: 25%;
-    height: 60%;
+    height: 75%;
     font-size: 36px;
     -unity-font-style: bold;
     border-top-left-radius: 25px;
@@ -23,4 +23,10 @@
     scale: 1.1 1.1;
     rotate: 1deg;
     -unity-background-image-tint-color: rgb(255, 255, 255);
+}
+
+.unity-progress-bar__background {
+    background-color: rgb(166, 46, 46);
+    background-image: url("project://database/Assets/Assets/Healthbar%20Spritesheet%20copy.png?fileID=8492265137611705857&guid=acfd1d6a650f9b642a5c9ba2edb04f12&type=3#Healthbar Spritesheet copy_16");
+    -unity-background-scale-mode: stretch-to-fill;
 }
