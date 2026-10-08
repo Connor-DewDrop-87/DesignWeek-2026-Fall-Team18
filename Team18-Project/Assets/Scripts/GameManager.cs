@@ -78,13 +78,14 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         CheckHPUI();
-        CheckIfDeadOrWon();
+        
         switch (state)
         {
             case GameManager.State.START: // Only Play at the Start
                 messageDisplayer.text = startText + "\n(Click Here)";
                 break;
             case GameManager.State.READY:
+                CheckIfDeadOrWon();
                 // Go Back Here when the Player is able to Act
                 // Different Flavour Text based on whatever attack the Cyclops will do Next
                 if (cyclopsAttackType == "Normal")
@@ -93,7 +94,7 @@ public class GameManager : MonoBehaviour
                 }
                 else if (cyclopsAttackType == "Power")
                 {
-                    messageDisplayer.text = $"The Cyclops Winding-Up for a Powerful Strike";
+                    messageDisplayer.text = $"The Cyclops is reaching for a Boulder";
                 }
                 else if (cyclopsAttackType == "Eye Ray")
                 {
@@ -131,7 +132,7 @@ public class GameManager : MonoBehaviour
                 }
                 else if (cyclopsAttackType == "Power")
                 {
-                    messageDisplayer.text = $"The Cyclops batters you with its club";
+                    messageDisplayer.text = $"The Cyclops batters you with a Boulder";
                 }
                 else if (cyclopsAttackType == "Eye Ray")
                 {
@@ -185,7 +186,8 @@ public class GameManager : MonoBehaviour
             case State.CYCLOPSTEXT:
                 //Determine the what the next attack will be
                 //Done here so that the player can have warning and so the first attack is always normal
-                float t = Random.Range(0f, 1f);
+                float t = Random.Range(0.000f, 1.000f);
+                Debug.Log($"Rolled a :{t}");
                 if (t < cyclopsNormalTH)
                 {
                     cyclopsAttackType = "Normal";

@@ -62,16 +62,9 @@ public class CyclopAction : MonoBehaviour
                     animationTime = 0;
                 }
             }
-            else
+            else if (gm.cyclopsAttackType == "Normal")
             {
-                if (gm.cyclopsAttackType == "Normal")
-                {
-                    TimeBetweenSprites = 0.1f;
-                }
-                else
-                {
-                    TimeBetweenSprites = 0.05f;
-                }   
+                TimeBetweenSprites = 0.1f; 
                 if (animationTime > TimeBetweenSprites && swingingForward == true)
                 {
                     currentSprite++;
@@ -91,6 +84,30 @@ public class CyclopAction : MonoBehaviour
                         currentSprite = 0;
                         swingingForward = true;
                     }
+                }
+            }
+            else
+            {
+                TimeBetweenSprites = 0.3f;
+                if (animationTime <= TimeBetweenSprites / 4)
+                {
+                    currentSprite = 9;
+                }
+                if (animationTime > TimeBetweenSprites / 4 && animationTime <= TimeBetweenSprites / 2)
+                {
+                    currentSprite = 10;
+                }
+                if (animationTime > TimeBetweenSprites/ 2 && animationTime <= TimeBetweenSprites*3/4)
+                {
+                    currentSprite = 10;
+                }
+                if (animationTime > TimeBetweenSprites*3/ 4 && animationTime <= TimeBetweenSprites)
+                {
+                    currentSprite = 9;
+                }
+                if (animationTime > TimeBetweenSprites)
+                {
+                    animationTime = 0;
                 }
             }
             
@@ -121,7 +138,6 @@ public class CyclopAction : MonoBehaviour
             animationTime = 0;
             currentSprite = 0;
         }
-        Debug.Log($"Sprite: {currentSprite}");
         sr.sprite = cyclopsSprites[currentSprite];
     }
 }

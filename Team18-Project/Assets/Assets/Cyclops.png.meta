@@ -335,7 +335,7 @@ TextureImporter:
         width: 61
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -357,7 +357,7 @@ TextureImporter:
         width: 61
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -366,6 +366,72 @@ TextureImporter:
       bones: []
       spriteID: 21ce4e0208245f044a90479997cf3e7b
       internalID: 1323533175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock2
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 88
+        width: 61
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c222eee913c7e842827c9f61664cf59
+      internalID: 1409687699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock1
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 88
+        width: 61
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6808f9650ec68804aaff3cfdad9cf1ea
+      internalID: -2048390634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock3
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 23
+        width: 61
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fba29d797c66e214d974ff4d6123cd83
+      internalID: 1506020659
       vertices: []
       indices: 
       edges: []
@@ -394,6 +460,9 @@ TextureImporter:
       LaserFire2: 1323533175
       Laugh: 1843518841
       ReadyAttack: -52585953369219089
+      Rock1: -2048390634
+      Rock2: 1409687699
+      Rock3: 1506020659
       SwingAttack: 1565726367
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
