@@ -741,15 +741,15 @@ MonoBehaviour:
   maxHP: 0
   HPFillPlayer: {fileID: 0}
   HPFillPlayerDark: {fileID: 0}
-  HPCyclops: 30
+  HPCyclops: 50
   maxHPCyclops: 0
   HPFillCyclops: {fileID: 0}
   HPFillCyclopsDark: {fileID: 0}
   cyclopsAttackType: Normal
   cyclopsAttackDammage: 0
   cyclopsNormalDammage: 3
-  cyclopsNormalTH: 0.7
-  cyclopsHeavyTH: 0.85
+  cyclopsNormalTH: 0.5
+  cyclopsHeavyTH: 0.75
   cyclopsLaserTH: 0
   cyclopsPowerDammage: 7
   HPHeartPlayer: {fileID: 192694082}
