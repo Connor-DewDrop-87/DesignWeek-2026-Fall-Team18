@@ -1974,7 +1974,7 @@ MonoBehaviour:
   baseScale: {x: 0, y: 0, z: 0}
   scaleAmount: 0.1
   scaleDecrease: 0.01
-  baseEyeChance: 0.1
+  baseEyeChance: 0.2
   eyeChance: 0
   rolling: 0
   rollTime: 3
