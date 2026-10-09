@@ -194,8 +194,64 @@ public class CyclopAction : MonoBehaviour
         }
         else
         {
-            animationTime = 0;
-            currentSprite = 0;
+            if (gm.blockButton.die.eyeChance <= 0.1f) // Less than or equal to 10%
+            {
+                currentSprite = 0;
+                animationTime = 0;
+            }
+            else if (gm.blockButton.die.eyeChance <= 0.3f) // Less than or equal to 30%
+            {
+                animationTime += Time.deltaTime;
+                TimeBetweenSprites = 0.5f;
+                if (animationTime > TimeBetweenSprites)
+                {
+                    if (currentSprite == 0)
+                    {
+                        currentSprite = 7;
+                    }
+                    else
+                    {
+                        currentSprite = 0;
+                    }
+                    animationTime = 0;
+                }
+            }
+            else if (gm.blockButton.die.eyeChance <= 0.5f) // Less than or equal to 50% 
+            {
+                animationTime += Time.deltaTime;
+                TimeBetweenSprites = 0.3f;
+                if (animationTime > TimeBetweenSprites)
+                {
+                    if (currentSprite == 0)
+                    {
+                        currentSprite = 7;
+                    }
+                    else
+                    {
+                        currentSprite = 0;
+                    }
+                    animationTime = 0;
+                }
+            }
+            else // Greater than 50%
+            {
+                animationTime += Time.deltaTime;
+                TimeBetweenSprites = 0.1f;
+                if (animationTime > TimeBetweenSprites)
+                {
+                    if (currentSprite == 0)
+                    {
+                        currentSprite = 7;
+                    }
+                    else
+                    {
+                        currentSprite = 0;
+                    }
+                    animationTime = 0;
+                }
+            }
+            
+            
             hasPlayed = false;
         }
         sr.sprite = cyclopsSprites[currentSprite];
