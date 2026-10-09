@@ -73,26 +73,42 @@ public class CyclopAction : MonoBehaviour
             else if (gm.cyclopsAttackType == "Normal")
             {
                 chosenActionSound = 3;
-                TimeBetweenSprites = 0.1f; 
-                if (animationTime > TimeBetweenSprites && swingingForward == true)
+                TimeBetweenSprites = 0.2f;
+                if (animationTime <= TimeBetweenSprites / 4)
                 {
-                    currentSprite++;
-                    animationTime = 0;
-                    if (currentSprite >= 4)
-                    {
-                        currentSprite = 3;
-                        swingingForward = false;
-                    }
+                    currentSprite = 0;
                 }
-                if (animationTime > TimeBetweenSprites && swingingForward == false)
+                if (animationTime > TimeBetweenSprites / 4 && animationTime <= TimeBetweenSprites / 2)
                 {
-                    currentSprite--;
+                    currentSprite = 1;
+                }
+                if (animationTime > TimeBetweenSprites / 2 && animationTime <= TimeBetweenSprites * 3 / 4)
+                {
+                    currentSprite = 2;
+                }
+                if (animationTime > TimeBetweenSprites * 3 / 4 && animationTime <= TimeBetweenSprites)
+                {
+                    currentSprite = 3;
+                }
+                if (animationTime > TimeBetweenSprites && animationTime <= TimeBetweenSprites * 5 / 4)
+                {
+                    currentSprite = 3;
+                }
+                if (animationTime > TimeBetweenSprites * 5 / 4 && animationTime <= TimeBetweenSprites * 3 / 2)
+                {
+                    currentSprite = 2;
+                }
+                if (animationTime > TimeBetweenSprites * 3 / 2 && animationTime <= TimeBetweenSprites * 2)
+                {
+                    currentSprite = 1;
+                }
+                if (animationTime > TimeBetweenSprites * 2 && animationTime <= TimeBetweenSprites * 9/4)
+                {
+                    currentSprite = 0;
+                }
+                if (animationTime > TimeBetweenSprites * 9 / 4)
+                {
                     animationTime = 0;
-                    if (currentSprite < 0)
-                    {
-                        currentSprite = 0;
-                        swingingForward = true;
-                    }
                 }
             }
             else
