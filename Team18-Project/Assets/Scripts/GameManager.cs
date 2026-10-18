@@ -89,19 +89,19 @@ public class GameManager : MonoBehaviour
                 // Check Block Button for Die to get the Chance of Eye
                 if (blockButton.die.eyeChance <= 0.1f) // Less than or equal to 10%
                 {
-                    messageDisplayer.text = "The cyclops guard is down, now's your chance to strike";
+                    messageDisplayer.text = "The cyclops guard is down, now's your chance to strike.";
                 }
                 else if (blockButton.die.eyeChance <= 0.3f) // Less than or equal to 30%
                 {
-                    messageDisplayer.text = "You expect the cyclops to be growing impatient, don't become complacent";
+                    messageDisplayer.text = "You expect the cyclops to be growing impatient, don't become complacent.";
                 }
                 else if (blockButton.die.eyeChance <= 0.5f) // Less than or equal to 50% 
                 {
-                    messageDisplayer.text = "You notice the cyclops becoming more erratic, don’t get distracted";
+                    messageDisplayer.text = "You notice the cyclops becoming more erratic, don’t get distracted.";
                 }
                 else // Greater than 50%
                 {
-                    messageDisplayer.text = "The cyclops is furious, keep your guard up";
+                    messageDisplayer.text = "The cyclops is furious, keep your guard up.";
                 }
                 // Go Back Here when the Player is able to Act
                 // Different Flavour Text based on whatever attack the Cyclops will do Next
@@ -132,7 +132,15 @@ public class GameManager : MonoBehaviour
                 break;
             case GameManager.State.FAILEDACTION:
                 string sv = CheckShieldValue();
-                messageDisplayer.text = $"{CurrentAction.failText[randomText]}\n{sv}\nCyclop's Turn (Click Here)";
+                if (CurrentAction.name == "Block")
+                {
+                    messageDisplayer.text = $"";
+                }
+                else
+                {
+                    messageDisplayer.text = $"{CurrentAction.failText[randomText]}\n";
+                }
+                messageDisplayer.text += $"{sv}\nCyclop's Turn (Click Here)";
                 state = State.CYCLOPSTURN;
                 break;
             case GameManager.State.CYCLOPSTEXT:

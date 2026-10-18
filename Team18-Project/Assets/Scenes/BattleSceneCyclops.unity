@@ -1620,6 +1620,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2afcd3cd6393ad459e3b85261d6460f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buttonColourChange: {fileID: 1107022516}
   die: {fileID: 1472149328}
   actionName: Heal
   blockStrength: 0
@@ -1783,6 +1784,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2afcd3cd6393ad459e3b85261d6460f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buttonColourChange: {fileID: 1263510873}
   die: {fileID: 1472149328}
   actionName: Block
   blockStrength: 0.75
@@ -2401,6 +2403,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2afcd3cd6393ad459e3b85261d6460f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buttonColourChange: {fileID: 1642964868}
   die: {fileID: 1472149328}
   actionName: Attack
   blockStrength: 0
@@ -2736,7 +2739,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 454237532131795938, guid: 161a3b5f061298845a083dbedbf89b03, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.20352173
+      value: -0.20349121
       objectReference: {fileID: 0}
     - target: {fileID: 454237532131795938, guid: 161a3b5f061298845a083dbedbf89b03, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

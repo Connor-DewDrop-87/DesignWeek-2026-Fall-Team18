@@ -1,12 +1,14 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Action : MonoBehaviour
 {
     // GameManager
     GameManager gm;
-    // Text
+    // Text and Colour
     TextMeshProUGUI buttonText;
+    public Image buttonColourChange;
     // Die
     public Dielogic die;
     // Action Stuff
@@ -29,6 +31,19 @@ public class Action : MonoBehaviour
     }
     void Update()
     {
+        // If the player should not be able to select the buttons, turn them invisible
+        if (gm.state == GameManager.State.READY)
+        {
+            buttonColourChange.color = new Color(1, 1, 1, 1);
+            buttonText.color = new Color(0, 0, 0, 1);
+
+        }
+        else
+        {
+            buttonColourChange.color = new Color(1, 1, 1, 0);
+            buttonText.color = new Color(0, 0, 0, 0);
+        }
+        
         buttonText.text = $"{actionName}";
         if (actionName=="Block")
         {
