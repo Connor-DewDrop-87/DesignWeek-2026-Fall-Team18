@@ -1343,7 +1343,17 @@ MonoBehaviour:
     Brewster
 
 
-    John-Marc Redwood
+    Special Thanks to:
+
+
+    Daniel Coombs
+
+
+    Beca Pesner
+
+
+    John-Marc
+    Redwood
 
 '
   m_isRightToLeft: 0
@@ -1376,8 +1386,8 @@ MonoBehaviour:
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_fontSizeMin: 1
+  m_fontSizeMax: 144
   m_fontStyle: 17
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
@@ -2017,8 +2027,8 @@ MonoBehaviour:
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_fontSizeMin: 1
+  m_fontSizeMax: 144
   m_fontStyle: 17
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
@@ -2229,8 +2239,8 @@ MonoBehaviour:
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_fontSizeMin: 1
+  m_fontSizeMax: 144
   m_fontStyle: 17
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
